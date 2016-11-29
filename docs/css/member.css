@@ -1,0 +1,115 @@
+.member-zone {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  display: flex; }
+  .member-zone__left {
+    width: 15%; }
+    .member-zone__left__avatar {
+      padding: 5px;
+      width: 50%; }
+      .member-zone__left__avatar img {
+        border-radius: 10px !important; }
+    .member-zone__left .menu li {
+      display: block; }
+    .member-zone__left .menu a {
+      display: inline-block;
+      color: #333;
+      padding: 5px;
+      font-size: 14px; }
+      .member-zone__left .menu a:hover {
+        color: #8c0000; }
+    .member-zone__left .menu .active {
+      color: #9c0000; }
+  .member-zone__right {
+    width: 85%;
+    padding-top: 10px;
+    margin-bottom: 20px; }
+  .member-zone__header {
+    border: 1px solid #ccc;
+    box-sizing: border-box; }
+    .member-zone__header h4 {
+      display: inline-block; }
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  display: inline-block; }
+
+.member-form form {
+  width: 50%; }
+
+.member-form .avatar-box {
+  display: flex; }
+
+.member-form .avatar {
+  border-radius: 0;
+  height: 60px;
+  width: 60px;
+  margin-right: 20px; }
+
+.member-form label {
+  display: block;
+  margin-bottom: 10px; }
+
+.member-form span {
+  font-size: 0.85rem;
+  color: #222; }
+
+.member-form textarea {
+  width: 100%;
+  max-width: 100%; }
+
+.member-form input[type='submit'] {
+  width: initial;
+  height: initial;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #910000;
+  color: white;
+  border: none; }
+
+.orders table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.orders th {
+  padding: 10px 5px;
+  text-align: left;
+  background: #efefef; }
+
+.orders td {
+  padding: 10px 5px;
+  border-bottom: 1px solid #ccc; }
+
+.orders a {
+  color: #710000; }
+
+.order table {
+  width: initial;
+  margin: 20px 0; }
+
+.order td {
+  padding: 5px 10px; }
+
+.order tr td:first-child {
+  text-align: right; }
+
+.order .button {
+  background: #910000;
+  color: white;
+  border: none; }
+
+.title {
+  border-bottom: 1px solid #ccc; }
+  .title h4 {
+    margin-bottom: 10px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }

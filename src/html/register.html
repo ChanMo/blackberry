@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block is_home %}hide{% endblock %}
+{% block main %}
+<div class="container">
+  <div class="register-box">
+    <h4>REgister</h4>
+    <form>
+      <label>
+        <input type="radio">person
+        <input type="radio">shop
+      </label>
+      <label>name
+        <input type="text">
+      </label>
+      <label>mobile
+        <input type="tel">
+      </label>
+      <label>city
+        <select></select>
+      </label>
+      <input type="submit" value="send">
+    </form>
+
+
+    <ul class="tabs">
+      <li><a href="#" class="active">商家</a></li>
+      <li><a href="#">个人</a></li>
+    </ul>
+    <div class="tabs-content">
+      <div class="tabs-panel active">
+        <form>
+          <label>name
+            <input type="text">
+          </label>
+          <label>mobile
+            <input type="tel">
+          </label>
+          <label>city
+            <select></select>
+          </label>
+          <input type="submit" value="send">
+        </form>
+      </div>
+      <div class="tabs-panel">
+        map
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

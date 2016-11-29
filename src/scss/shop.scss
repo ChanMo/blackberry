@@ -1,0 +1,126 @@
+.shops {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  &__left {
+      width: 25%;
+      margin: 10px 0;
+      padding: 20px;
+      background: #efefef;
+      &__search {
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px dashed #ccc;
+          label {
+              font-size: 0.85rem;
+              color: #333;
+              select, input {
+                  margin-bottom: 10px;
+                  color: #333;
+              }
+          }
+          input[type='submit'] {
+              background: #910000;
+              color: white;
+              border: none;
+          }
+      }
+  }
+  &__right {
+      width: 75%;
+      padding: 10px 20px;
+      &__sort {
+          clear: both;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ccc;
+          .sort {
+              display: flex;
+          }
+          a {
+              position: relative;
+              float: left;
+              padding: 5px 10px;
+              border: 1px solid #aaa;
+              border-right: none;
+              &:last-child {
+                  border-right: 1px solid #aaa;
+              }
+              color: #333;
+              font-size: 0.85rem;
+              box-sizing: border-box;
+              &:not(.active):hover {
+                  background: #ccc;
+              }
+          }
+          .active {
+              background: #910000;
+              color: white;
+              border-color: #910000;
+          }
+      }
+      &__list {
+          display: flex;
+          flex-wrap: wrap;
+      }
+      &__pagination {
+          margin: 10px 0;
+          text-align: right;
+      }
+  }
+}
+.shop-card {
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+    transform: all 2s;
+    text-align: center;
+    h6 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 0;
+        word-wrap: no;
+        overflow: hidden;
+    }
+    span {
+        display: block;
+        color: #333;
+        font-size: 0.85rem;
+        word-wrap: no;
+        overflow: hidden;
+    }
+    &:hover {
+        border-color: #ccc;
+        box-shadow: 0 0 4px #aaa;
+    }
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.crumbs-nav {
+    padding: 5px;
+}
+
+.shop-main {
+    display: flex;
+    &__left {
+        width: 40%;
+        padding: 10px;
+        box-sizing: content-box;
+    }
+    &__right {
+        width: 60%;
+        padding: 10px;
+        box-sizing: content-box;
+        div {
+            background: #efefef;
+            padding: 10px;
+            font-size: 0.85rem;
+        }
+    }
+}

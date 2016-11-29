@@ -1,0 +1,170 @@
+.goods-detail {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #ccc;
+  clear: both;
+  display: flex;
+  flex-wrap: wrap; }
+
+.goods-nav {
+  padding: 10px 0;
+  width: 100%; }
+
+.goods-cover {
+  width: 30%; }
+  .goods-cover__main li {
+    display: none; }
+  .goods-cover__main .active {
+    display: block; }
+  .goods-cover__main img {
+    width: 100%; }
+  .goods-cover__list {
+    width: 100%; }
+    .goods-cover__list li {
+      display: inline-block;
+      border: 2px solid white; }
+      .goods-cover__list li:hover {
+        border-color: #910000; }
+
+.goods-param {
+  color: #333;
+  width: 70%;
+  padding: 10px 20px;
+  font-size: 0.85rem; }
+  .goods-param__price {
+    background: #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 0.85rem; }
+    .goods-param__price span {
+      margin-left: 10px;
+      color: #910000;
+      font-size: 1.2rem; }
+      .goods-param__price span:before {
+        content: "\f157";
+        font-family: FontAwesome;
+        margin-right: .2rem; }
+  .goods-param__freight {
+    padding: 10px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #ccc; }
+  .goods-param__param__item {
+    display: flex;
+    padding: 10px; }
+  .goods-param__param__title {
+    width: 15%;
+    padding: 5px 0; }
+  .goods-param__param__list {
+    width: 85%; }
+    .goods-param__param__list a {
+      position: relative;
+      display: inline-block;
+      padding: 5px 12px;
+      border: 1px solid #ccc;
+      color: #333; }
+      .goods-param__param__list a:hover {
+        border-color: #910000; }
+    .goods-param__param__list .active {
+      border-color: #910000; }
+      .goods-param__param__list .active:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: linear-gradient(-45deg, #910000 50%, #fff 50%);
+        color: white;
+        font-size: 16px;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+  .goods-param__action {
+    margin-top: 30px;
+    display: flex; }
+    .goods-param__action__count {
+      display: block;
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
+      border: 1px solid #ccc;
+      margin-right: 30px;
+      position: relative;
+      box-sizing: border-box; }
+      .goods-param__action__count input {
+        text-align: center;
+        padding: 0;
+        border: none;
+        width: 100%; }
+      .goods-param__action__count i {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -1px;
+        right: -20px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 20px; }
+        .goods-param__action__count i:nth-child(2) {
+          top: -1px; }
+        .goods-param__action__count i:nth-child(3) {
+          top: 19px;
+          border-top: none; }
+    .goods-param__action .button {
+      background: #910000;
+      color: white;
+      border: none;
+      padding: 12px 20px; }
+      .goods-param__action .button:before {
+        content: "\f217";
+        font-family: FontAwesome;
+        margin-right: 5px; }
+
+.goods-info {
+  width: 100%;
+  clear: both;
+  margin-top: 20px;
+  padding: 10px; }
+
+.tabs {
+  border-bottom: 1px solid #910000; }
+  .tabs li, .tabs li a {
+    display: inline-block; }
+  .tabs a {
+    color: #333;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ccc;
+    font-size: 0.85rem; }
+    .tabs a:hover {
+      color: #8c0000; }
+    .tabs a.active {
+      background: #8c0000;
+      color: white; }
+
+.tabs-content {
+  padding: 10px; }
+  .tabs-content .tabs-panel {
+    display: none; }
+  .tabs-content .active {
+    display: block; }
+
+.comments {
+  width: 100%;
+  border: none; }
+  .comments tr {
+    display: table-row; }
+  .comments td {
+    border: none;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.85rem; }
+    .comments td:nth-child(1) {
+      width: 60%; }
+    .comments td:nth-child(2) {
+      width: 20%; }
+    .comments td:nth-child(3) {
+      width: 20%; }
+  .comments span {
+    font-size: 0.75rem;
+    color: #666; }

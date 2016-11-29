@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block is_home %}hide{% endblock %}
+{% block main %}
+<div class="goods-list">
+  <div class="goods-list__content">
+
+    <div class="goods-list__nav">
+      <span class="goods-list__nav__count">共 20410件相关商品</span>
+      <ul class="crumbs-nav">
+        <li><a href="#">全部结果</a></li>
+        <li><a href="#" class="active">功能用途：无线耳机</a></li>
+        <li><a href="#">无线耳机</a></li>
+      </ul>
+    </div>
+
+    <div class="goods-list__filter filter">
+
+      {% for i in range(0,4) %}
+      <div class="filter__item">
+        <div class="filter__item__title">Brand:</div>
+        <ul class="filter__item__content">
+          {% for j in range(0,20) %}
+          <li><a href="#">apple</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="goods-list__sort">
+      <div class="sort">
+        <a href="" class="active">Hot</a>
+        <a href="">New</a>
+        <a href="">Price</a>
+        <a href="">Sold</a>
+      </div>
+    </div>
+
+    <div class="goods-list__list">
+      {% for item in range(0,20) %}
+      <a href="detail.html" class="card">
+        <img src="http://img10.360buyimg.com/N3/jfs/t3049/94/1890472248/131923/6841598c/57d61617Nd49c568b.jpg">
+        <span class="card__title">blackberry priv</span>
+        <span class="card__price">180</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="goods-list__pagination">
+      <ul class="pagination">
+        <li><a href="#" class="prev">Prev</a></li>
+        {% for i in range(1,6) %}
+        <li><a href="#" class="{% if i == 1 %}active{% endif %}">{{ i }}</a></li>
+        {% endfor %}
+        <li><a href="#" class="next">Next</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

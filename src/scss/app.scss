@@ -1,0 +1,540 @@
+/**
+ * juss
+ * @author chen
+ * @date 20160921
+ */
+
+/** import  all valiable **/
+@import 'settings';
+@import 'normalize';
+
+// Core variables and mixins
+@import 'util/util';
+@import 'typography';
+@import 'tables';
+@import 'forms';
+@import 'grid';
+@import 'buttons';
+@import 'helper';
+// Components
+@import 'components/menu';
+@import 'components/top-bar';
+@import 'components/pagination';
+// Components Javascript
+@import 'components/modal';
+@import 'components/slide';
+// Utility classes
+
+
+
+$w: 1200px;
+body {
+    background: #f5f5f5;
+}
+
+/** global **/
+ul {
+    list-style-type: none !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+}
+a {
+    color: #333;
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+.menu {
+    li, li a {
+        display: inline-block;
+    }
+}
+
+/** end global **/
+
+/** components **/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    &__box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 600px;
+        max-width: 100%;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background: white;
+    }
+    &__title {
+        padding-bottom: .5rem;
+        border-bottom: 1px solid #ccc;
+    }
+    &__container {
+        padding: .5rem;
+    }
+    select {
+        margin-bottom: .5rem;
+    }
+    &__close {
+    }
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    input {
+        padding-left: 2.5rem;
+    }
+    button {
+        margin-bottom: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    &:before {
+        content: "\f002";
+        font-family: FontAwesome;
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        display: inline-block;
+        padding: 8px 0;
+        color: #888;
+    }
+}
+/** end **/
+
+.card {
+    width: 180px;
+    display: block;
+    //border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    img {
+        width: 100%;
+        transition: all 2s;
+    }
+    &__title {
+        display: block;
+        color: #111;
+    }
+    &__price {
+        color: rgb(200,0,0);
+        &:before {
+            content: "\f157";
+            font-family: FontAwesome;
+        }
+    }
+}
+
+@import 'list';
+@import 'detail';
+@import 'member';
+@import 'cart';
+@import 'login';
+@import 'shop';
+@import 'page';
+@import 'home';
+@import 'buy';
+
+@include cart;
+@include member;
+
+
+
+.top-bar {
+    background: #eeeeee;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    &__container {
+        width: 1200px;
+        clear: both;
+        margin: 0 auto;
+    }
+    &__title {
+        display: inline-block;
+        padding: 0 0.8rem;
+        color: #717171;
+        font-size: 0.9rem;
+    }
+    &__left {
+    }
+    &__right {
+        float: right;
+    }
+    ul, li, li a {
+        display: inline-block;
+    }
+    a {
+        padding: 0 .5rem;
+        font-size: 14px;
+        color: #717171;
+        &:hover,
+        &:active {
+            color: $primary-color;
+        }
+    }
+}
+
+
+.header {
+    width: 1200px;
+    max-width: 100%;
+    margin: 20px auto;
+    position: relative;
+    clear: both;
+    &__logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+    }
+    &__cart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(0, 20%);
+        margin: 0;
+
+        border: 1px solid #ccc;
+        //padding: 10px 16px;
+        color: #333;
+        background: transparent;
+        font-size: 0.85rem;
+        &:hover {
+            background: transparent;
+            color: #910000;
+        }
+        &:before {
+            content: "\f07a";
+            font-family: FontAwesome;
+            margin-right: 5px;
+            color: $primary-color;
+        }
+        &:after {
+            content: "\f105";
+            font-family: FontAwesome;
+            margin-left: 5px;
+        }
+    }
+    &__search {
+        width: 500px/$w*100%;
+        margin: 0 auto;
+        button {
+            border: $primary-color;
+            background: $primary-color;
+            color: white;
+            border-radius: 0;
+        }
+        input {
+            border-color: $primary-color !important;
+            margin: 0;
+        }
+    }
+    &__tips a {
+        margin-right: 5px;
+        font-size: 14px;
+        color: #717171;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+
+/************* goods category ***************/
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid $primary-color;
+    &-ul {
+        width: 1200px;
+        max-width: 100%;
+        //transform: translate(0,2px);
+    }
+    &-ul > li {
+        display: inline-block;
+        &:first-child {
+            width: 220px/$w*100%;
+            position: relative;
+            & > a {
+                display: block;
+                box-sizing: border-box;
+                background: $primary-color;
+                color: white;
+                &::before {
+                    content: "\f0c9";
+                    font-family: FontAwesome;
+                    margin-right: 5px;
+                }
+            }
+            &:hover {
+                .category-main {
+                    display: block;
+                }
+            }
+
+        }
+        &:not(:first-child):hover > a{
+            color: $primary-color;
+        }
+    }
+
+    &-ul > li > a {
+        height: 40px;
+        padding: 0 20px;
+        line-height: 40px;
+        color: black;
+    }
+}
+
+.category-main {
+    position: absolute;
+    z-index: 1000;
+    width: 220px/$w*100%;
+    height: $height + 2px;
+    border-top: 2px solid #910000;
+    background: #eee;
+    //overflow: hidden;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    & > li > a{
+        display: block;
+        padding: 0 1rem;
+        height: $height/15;
+        line-height: $height/15;
+        color: #333;
+        font-size: 0.85rem;
+        &::after {
+            content: "\f105";
+            font-family: FontAwesome;
+            float: right;
+            opacity: 1;
+            transition: all 1s;
+        }
+    }
+    & > li:hover {
+        & > a {
+            background: white;
+            color: $primary-color;
+            &::after {
+                //opacity: 0;
+                //transform: rotate(90deg);
+                //margin-right: -15px;
+                display: none;
+            }
+        }
+        .category-content {
+            display: block;
+        }
+    }
+}
+
+.category-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 220px - 1px;
+    width: 880px;
+    height: $height;
+    padding: 10px 15px;
+    background: white;
+    box-sizing: border-box;
+    z-index: 9999;
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: none;
+    }
+    td {
+        padding: 8px;
+        border: none;
+        border-bottom: 1px dashed #dedede;
+    }
+    tr td:first-child {
+        //width: 120px;
+        white-space: nowrap;
+        vertical-align: top;
+        &:after {
+            content: "\f105";
+            font-family: FontAwesome;
+        }
+        a {
+            font-size: 0.9rem;
+        }
+    }
+    tr td:last-child a{
+        //border-left: 1px solid #aaa;
+        font-size: 0.85rem;
+    }
+    a {
+        padding: 0 .5rem;
+        color: #333;
+        &:hover {
+            color: #910000;
+        }
+    }
+}
+
+
+
+.footer-ensure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+    div {
+        width: 60px;
+        margin: 0 40px;
+        text-align: center;
+        font-size: 0.85rem;
+        img {
+            width: 100%;
+        }
+        span {
+            margin-top: 5px;
+            display: block;
+            color: #333;
+        }
+    }
+}
+
+.footer-desc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+    background: white;
+    &__content {
+        width: $w;
+        display: flex;
+        justify-content: space-around;
+    }
+    &__item {
+    }
+    h5 {
+        margin-bottom: .5rem;
+    }
+    a {
+        line-height: 20px;
+        color: #333;
+        font-size: 0.85rem;
+        &:hover {
+            color: black;
+        }
+    }
+}
+.footer-copyright {
+    padding: 20px 0;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    background: black;
+    color: #ddd;
+}
+
+
+
+
+/******************** Home Category CSS *******************/
+.category-card {
+    margin-bottom: 40px;
+    position: relative;
+    &__title {
+        position: relative;
+        border-bottom: 1px solid $primary-color;
+    }
+    h2 {
+        display: inline-block;
+        margin: 5px 0;
+        border-left: 5px solid $primary-color;
+        padding-left: 5px;
+        font-size: 1.5rem;
+    }
+    .menu {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translate(0, 1px);
+        a {
+            padding: 8px 15px;
+            border: {
+                top: 3px solid white;
+                left: 1px solid white;
+                right: 1px solid white;
+            }
+            font-size: 0.85rem;
+            color: #333;
+        }
+        .active {
+            border-color: $primary-color;
+            border-bottom: 1px solid white;
+            color: $primary-color;
+        }
+    }
+    &__content {
+        position: relative;
+        clear: both;
+    }
+    &__left {
+        position: relative;
+        float: left;
+    }
+    &__right {
+        width: 100%;
+        //float: right;
+        position: relative;
+        &__content {
+            //display: flex;
+            display: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .active {
+            display: flex;
+        }
+        .card {
+            width: 20%;
+            border-top: none;
+            border-left: none;
+            &:nth-child(5), &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+}
+
+
+.hide {
+    display: none;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%,-50%);
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    padding: 2px;
+    min-width: 1rem;
+    background: #910000;
+    color: white;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+}

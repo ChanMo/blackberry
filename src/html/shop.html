@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block is_home %}hide{% endblock %}
+{% block main %}
+<div class="container">
+  <div class="shop-nav">
+    <ul class="crumbs-nav">
+      <li><a href="#">手机</a></li>
+      <li><a href="#">apple</a></li>
+      <li><a href="#">iphone7</a></li>
+    </ul>
+  </div>
+  <div class="shop-main">
+    <div class="shop-main__left">
+      <img src="https://gdp.alicdn.com/imgextra/i3/2134802284/TB2w_4kopXXXXXwXpXXXXXXXXXX-2134802284.png">
+    </div>
+    <div class="shop-main__right">
+      <h4>Apple Shop</h4>
+      <div>
+        <p>联系人：许东</p>
+        <p>手机：18660138836</p>
+        <p>地址：济南市中区白马山南路13号</p>
+      </div>
+    </div>
+  </div>
+  <div class="shop-info">
+    <ul class="tabs">
+      <li><a href="#" class="active">店铺展示</a></li>
+      <li><a href="#">店铺地图</a></li>
+    </ul>
+    <div class="tabs-content">
+      <div class="tabs-panel active">
+        introduce
+      </div>
+      <div class="tabs-panel">
+        map
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

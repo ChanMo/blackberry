@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="zh-hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackberry Market</title>
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- endbuild -->
+  </head>
+  <body>
+
+    {% block body %}
+
+    <!-- top bar -->
+    <div class="top-bar">
+      <div class="top-bar__container">
+        <div class="top-bar__title">Welcome to Blackberry</div>
+        <ul class="top-bar__left">
+          <li><a href="login.html">登录</a></li>
+          <li><a href="register.html">注册</a></li>
+        </ul>
+        <ul class="top-bar__right">
+          <li><a href="member.html">chen</a></li>
+          <li><a href="member.html">logout</a></li>
+        </ul>
+      </div>
+    </div>
+    {% endblock %}
+
+    <!-- header -->
+    {% block header %}
+    <div class="header">
+      <!-- logo -->
+      <a href="index.html"><img src="img/" class="header__logo"></a>
+
+      <!-- search -->
+      <div class="header__search">
+        <div class="search-form">
+          <input type="search" placeholder="please input your what">
+          <button class="button">搜索</button>
+        </div>
+        <div class="header__tips">
+          <a href="list.html">黑莓</a>
+          <a href="#">索尼</a>
+          <a href="#">苹果</a>
+          <a href="#">特斯拉</a>
+          <a href="#">中国风</a>
+        </div>
+      </div>
+
+      <!-- cart -->
+      <a class="header__cart button" href="cart.html">我的购物车<span class="badge">15</span></a>
+    </div>
+    {% endblock %}
+
+    <!--------------------- nav ------------------------------>
+    {% block nav %}
+    <div class="nav">
+      <ul class="nav-ul">
+        <li>
+          <a href="#" class="category-toggle">商品分类</a>
+          <ul class="category-main {% block is_home %}{% endblock %}">
+            {% set category_list = ['家用电器','手机、运营商、数码','电脑、办公','家居、家具、家装、厨具','男装、女装、童装、内衣','个护化妆、清洁用品、宠物','鞋靴、箱包、珠宝、奢侈品','运动户外、钟表','汽车、汽车用品','母婴、玩具乐器','食品、酒类、生鲜、特产','医药保健','图书、音像、电子书','彩票、旅行、充值、票务','理财、众筹、白条、保险'] %}
+            {% for i in category_list %}
+            <li>
+              <a href="#" class="active">{{ i }}</a>
+              <div class="category-content">
+                <table>
+                  {% for i in range(0,5) %}
+                  <tr>
+                    <td><a href="#">当季流行</a></td>
+                    <td>
+                      {% for i in range(0,20) %}
+                      <a href="#">沙发</a>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="shops.html">Item1</a></li>
+        <li><a href="shops.html">Item2</a></li>
+      </ul>
+    </div>
+    {% endblock %}
+
+    <!------------------- content ------------------------------>
+    <div class="content">
+      {% block main %}
+      {% endblock %}
+    </div>
+
+
+    <!------------------------ footer ------------------------->
+    {% block footer %}
+    <div class="footer">
+      <!-- <div class="footer-ensure"> -->
+      <!--   {% set ensure_list = ['正品采购','正品保险','专业配送','金牌服务','万千信赖','权威荣誉'] %} -->
+      <!--   {% for i in ensure_list %} -->
+      <!--   <div> -->
+      <!--     <img src="img/footer_zpcg.png"> -->
+      <!--     <span>{{ i }}</span> -->
+      <!--   </div> -->
+      <!--   {% endfor %} -->
+      <!-- </div> -->
+
+      <div class="footer-desc">
+        <div class="footer-desc__content">
+          <div class="footer-desc__item">
+            <h5>新手指南</h5>
+            <ul>
+              <li><a href="page.html">关于发票</a></li>
+              <li><a href="#">常见问题</a></li>
+            </ul>
+          </div>
+          <div class="footer-desc__item">
+            <h5>支付购买</h5>
+            <ul>
+              <li><a href="#">网上支付</a></li>
+              <li><a href="#">虚拟账户</a></li>
+            </ul>
+          </div>
+          <div class="footer-desc__item">
+            <h5>服务支持</h5>
+            <ul>
+              {% for i in range(0,4) %}
+              <li><a href="#">客服电话 400-8888888</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="footer-desc__item">
+            <h5>手机商城</h5>
+            <img src="https://img.alicdn.com/tps/i1/TB14VZKHXXXXXcAXXXX64VRZFXX-105-105.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div>地址：China Shendu</div>
+        <span></span>
+      </div>
+    </div>
+
+    {% endblock %}
+
+    <!-- build:js js/app.min.js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- endbuild -->
+    {% block js %}{% endblock %}
+ </body>
+</html>

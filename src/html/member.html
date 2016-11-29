@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block header %}{% endblock %}
+{% block nav %}{% endblock %}
+{% block main %}
+<div class="member">
+  <div class="member__header">
+    <div class="member__header__container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">messages</a></li>
+      </ul>
+      <div class="search-form">
+        <input type="search">
+        <input type="submit" value="search">
+      </div>
+    </div>
+  </div>
+  <div class="member__main">
+    <div class="member__main__container">
+      <div class="member__main__left">
+        {% for i in range(0,3) %}
+        <dl>
+          <dt>my orders</dt>
+          {% for i in range(0,3) %}
+          <dd><a href="#">name</a></dd>
+          {% endfor %}
+        </dl>
+        {% endfor %}
+      </div>
+      <div class="member__main__right">
+        <div class="member__main__item">
+          <img src="https://s-media-cache-ak0.pinimg.com/236x/53/61/fd/5361fd02c03cc540d32697dd8217f7ba.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

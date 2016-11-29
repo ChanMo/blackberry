@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block is_home %}hide{% endblock %}
+{% block main %}
+<div class="goods-detail">
+
+  <div class="goods-nav">
+    <ul class="crumbs-nav">
+      <li><a href="#">手机</a></li>
+      <li><a href="#">apple</a></li>
+      <li><a href="#">iphone7</a></li>
+    </ul>
+  </div>
+
+
+  <div class="goods-cover">
+    <ul class="goods-cover__main">
+      {% for i in range(0,2) %}
+      <li><a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/717NgRwd6oL._SY500_.jpg"></a></li>
+      <li><a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/91Df8QNWp8L._SX522_.jpg"></a></li>
+      {% endfor %}
+      <li class="active"><a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/717NgRwd6oL._SY500_.jpg"></a></li>
+    </ul>
+    <ul class="goods-cover__list">
+      {% for item in range(0,5) %}
+      <li><a href="#"><img src="//img13.360buyimg.com/n5/s54x54_jfs/t3271/198/1628975622/101259/6ea4ec2c/57d0c513N881221b4.jpg"></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+  <div class="goods-param">
+    <h4>Teen Vogue</h4>
+    <div class="goods-param__price">
+      price:<span>180.00</span>
+    </div>
+    <div class="goods-param__freight">
+      运费: 0
+    </div>
+    <div class="goods-param__param">
+      {% for item in range(0,3) %}
+      <div class="goods-param__param__item">
+        <div class="goods-param__param__title">
+          选择颜色:
+        </div>
+        <div class="goods-param__param__list">
+          {% for i in range(0,10) %}
+          <a href="#" {% if i == 0 %}class="active"{% endif %}>black</a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="goods-param__action">
+
+      <div class="goods-param__action__count count-box">
+        <input value="1">
+        <i class="fa fa-angle-up"></i>
+        <i class="fa fa-angle-down"></i>
+      </div>
+
+      <button class="button">加入购物车</button>
+    </div>
+  </div>
+
+
+  <div class="goods-info">
+    <ul class="tabs">
+      <li><a href="#" class="active">商品介绍</a></li>
+      <li><a href="#">商品评价</a></li>
+    </ul>
+    <div class="tabs-content">
+      <div class="tabs-panel active">
+        introduce
+      </div>
+      <div class="tabs-panel">
+        <table class="comments">
+          {% for i in range(0,6) %}
+          <tr>
+            <td>
+              东西很COOL 无线耳机质量也不错 试听了一下耳机的音质很好 用这个经常去健身房边练边听音乐 挺方便 Very Love it！
+              <span>16/10/01</span>
+            </td>
+            <td>Gold, small</td>
+            <td>chen</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+/*** count box **/
+$(".count-box").find("i").bind("click", function(e){
+  e.preventDefault();
+  var current = parseInt($(".count-box input").val());
+  var index = $(this).index();
+  if(index == 1){
+    current++;
+  }else if(index == 2){
+    if(current > 1){
+      current--;
+    }
+  }
+  $(".count-box input").val(current);
+});
+
+
+/** goods cover **/
+$(".goods-cover .goods-cover__list li").bind("mouseover", function(e){
+  //e.preventDefault();
+  var index = $(this).index();
+  console.log(index);
+  $(".goods-cover .goods-cover__main li:eq("+index+")").addClass("active");
+  $(".goods-cover .goods-cover__main li:not(:eq("+index+"))").removeClass("active");
+});
+
+</script>
+{% endblock %}
