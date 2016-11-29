@@ -2426,7 +2426,7 @@ table {
     .member__main__left {
       float: left;
       width: 120px;
-      padding-right: 2rem;
+      padding: 0 2rem 0 .5rem;
       box-sizing: border-box; }
       .member__main__left dl {
         margin: 0 0 1rem 0; }
