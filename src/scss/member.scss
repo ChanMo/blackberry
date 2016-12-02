@@ -10,6 +10,11 @@ $w: 1200px;
                 width: $w;
                 max-width: 100%;
                 margin: 0 auto;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                }
                 ul,li,a {
                     display: inline-block;
                 }
@@ -18,10 +23,12 @@ $w: 1200px;
                     line-height: 2rem;
                     padding: 0 .5rem;
                     color: white;
+                    font-size: 0.85rem;
                 }
                 .search-form {
                     float: right;
                     height: 2rem;
+                    font-size: 0.8rem;
                     &:before {
                         left: 5px;
                         top: 50%;
@@ -62,19 +69,30 @@ $w: 1200px;
             }
             &__left {
                 float: left;
-                width: 120px;
+                width: 140px;
                 padding: 0 2rem 0 .5rem;
                 box-sizing: border-box;
                 dl {
                     margin: 0 0 1rem 0;
+                    font-size: 0.8rem;
+                    line-height: 1.5rem;
+                    dt {
+                        color: #333;
+                    }
                     dd {
                         margin-left: .5rem;
+                        a {
+                            color: #666;
+                            &:hover {
+                                color: $primary-color;
+                            }
+                        }
                     }
                 }
             }
             &__right {
                 float: left;
-                width: 1080px;
+                width: 1060px;
             }
             &__item {
                 background: white;

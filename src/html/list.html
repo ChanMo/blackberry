@@ -2,7 +2,15 @@
 {% block is_home %}hide{% endblock %}
 {% block main %}
 <div class="goods-list">
+
   <div class="goods-list__content">
+
+    <!-- <div class="goods-list__header"> -->
+    <!--   <div class="search-form"> -->
+    <!--     <input type="search" placeholder=""> -->
+    <!--     <button class="button">搜索</button> -->
+    <!--   </div> -->
+    <!-- </div> -->
 
     <div class="goods-list__nav">
       <span class="goods-list__nav__count">共 20410件相关商品</span>
@@ -17,10 +25,10 @@
 
       {% for i in range(0,4) %}
       <div class="filter__item">
-        <div class="filter__item__title">Brand:</div>
+        <div class="filter__item__title">分类</div>
         <ul class="filter__item__content">
           {% for j in range(0,20) %}
-          <li><a href="#">apple</a></li>
+          <li><a href="#">名称</a></li>
           {% endfor %}
         </ul>
       </div>
@@ -29,30 +37,31 @@
 
     <div class="goods-list__sort">
       <div class="sort">
-        <a href="" class="active">Hot</a>
-        <a href="">New</a>
-        <a href="">Price</a>
-        <a href="">Sold</a>
+        <a href="" class="active">综合<i class="fa fa-arrow-down"></i></a>
+        <a href="">新品<i class="fa fa-arrow-down"></i></a>
+        <a href="">价格<i class="fa fa-arrow-down"></i></a>
+        <a href="">销量<i class="fa fa-arrow-down"></i></a>
       </div>
     </div>
 
     <div class="goods-list__list">
       {% for item in range(0,20) %}
-      <a href="detail.html" class="card">
-        <img src="http://img10.360buyimg.com/N3/jfs/t3049/94/1890472248/131923/6841598c/57d61617Nd49c568b.jpg">
-        <span class="card__title">blackberry priv</span>
-        <span class="card__price">180</span>
+      <a href="detail.html">
+          <div class="cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/a7/46/99/a746996ec4b22314363be3f55f192438.jpg);">
+          </div>
+          <p><span class="price">180</span></p>
+          <p class="card__title">黑莓 priv black/32G 2015 Europe Canada</p>
       </a>
       {% endfor %}
     </div>
 
     <div class="goods-list__pagination">
       <ul class="pagination">
-        <li><a href="#" class="prev">Prev</a></li>
+        <li><a href="#" class="prev">上一页</a></li>
         {% for i in range(1,6) %}
         <li><a href="#" class="{% if i == 1 %}active{% endif %}">{{ i }}</a></li>
         {% endfor %}
-        <li><a href="#" class="next">Next</a></li>
+        <li><a href="#" class="next">下一页</a></li>
       </ul>
     </div>
   </div>

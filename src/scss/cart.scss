@@ -4,6 +4,9 @@
         width: $w;
         margin: 0 auto;
         max-width: 100%;
+        .check-all {
+            margin-right: .5rem;
+        }
         &__header {
             padding: 2rem 0;
             &:after {
@@ -14,10 +17,39 @@
             .search-form {
                 width: 40%;
                 float: right;
+                border: 1px solid $primary-color;
+                input {
+                    margin: 0;
+                    border: none;
+                    font-size: 0.85rem;
+                }
+                input[type='submit'] {
+                    padding: 0 1rem 0 1rem;
+                }
             }
         }
         &__main {
             &__header {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li, a {
+                        display: inline-block;
+                    }
+                    a {
+                        height: 2.5rem;
+                        line-height: 2.5rem;
+                        margin-right: 2rem;
+                        border-bottom: 2px solid transparent;
+                        letter-spacing: 1px;
+                    }
+                    .active a {
+                        color: $primary-color;
+                        border-color: $primary-color;
+                    }
+                }
+
             }
             &__table {
                 color: #666;
@@ -30,14 +62,13 @@
                     }
                     tr:first-child {
                         background: #F3F3F3;
-                        /* th:first-child { */
-                        /*     width: 60px; */
-                        /* } */
                     }
-                    /* tr:not(:first-child) td:first-child { */
-                    /*     width: 30px; */
-                    /*     text-align: center; */
-                    /* } */
+                    th {
+                        font-size: 0.8rem;
+                    }
+                    td {
+                        font-size: 0.75rem;
+                    }
                     th, td {
                         border: none;
                     }
@@ -88,14 +119,32 @@
             line-height: $height;
             border-top: 1px solid #ddd;
             background: white;
+            font-size: 0.8rem;
             &__container {
                 width: $w;
                 margin: 0 auto;
-                .button {
+                label {
+                    margin-right: .5rem;
+                }
+                a {
+                    margin: 0 .5rem;
+                    text-align: right;
+                    display: inline-block;
+                }
+                div {
+                    display: inline-block;
                     float: right;
-                    height: 100%;
                     padding: 0 1rem;
+                    em {
+                        color: red;
+                    }
+                }
+                .button {
+                    height: 100%;
+                    padding: 0 2rem;
                     background: $primary-color;
+                    font-size: 1rem;
+                    float: right;
                 }
             }
         }

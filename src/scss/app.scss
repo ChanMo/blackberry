@@ -29,15 +29,15 @@
 
 $w: 1200px;
 body {
-    background: #f5f5f5;
+    //background: #f5f5f5;
 }
 
 /** global **/
 ul {
-    list-style-type: none !important;
-    margin-left: 0 !important;
-    margin-bottom: 0 !important;
-    padding-left: 0 !important;
+    /* list-style-type: none !important; */
+    /* margin-left: 0 !important; */
+    /* margin-bottom: 0 !important; */
+    /* padding-left: 0 !important; */
 }
 a {
     color: #333;
@@ -91,13 +91,16 @@ a {
 .search-form {
     position: relative;
     display: flex;
+    border: 2px solid $primary-color;
     input {
         padding-left: 2.5rem;
+        border: none;
     }
     button {
         margin-bottom: 0;
         padding-left: 30px;
         padding-right: 30px;
+        border: none;
     }
     &:before {
         content: "\f002";
@@ -147,7 +150,8 @@ a {
 
 @include cart;
 @include member;
-
+@include list;
+@include commodity;
 
 
 .top-bar {
@@ -299,6 +303,9 @@ a {
 }
 
 .category-main {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
     position: absolute;
     z-index: 1000;
     width: 220px/$w*100%;
