@@ -1,0 +1,38 @@
+@mixin commodity-card {
+    .commodity-card {
+        display: inline-block;
+        &__cover {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            float: left;
+        }
+        &__title {
+            float: left;
+        }
+    }
+}
+.card {
+    width: 180px;
+    display: block;
+    //border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    img {
+        width: 100%;
+        transition: all 2s;
+    }
+    &__title {
+        display: block;
+        color: #111;
+    }
+    &__price {
+        color: rgb(200,0,0);
+        &:before {
+            content: "\f157";
+            font-family: FontAwesome;
+        }
+    }
+}
+
+

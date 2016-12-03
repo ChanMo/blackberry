@@ -17,176 +17,58 @@
 @import 'buttons';
 @import 'helper';
 // Components
-@import 'components/menu';
-@import 'components/top-bar';
-@import 'components/pagination';
-// Components Javascript
-@import 'components/modal';
-@import 'components/slide';
-// Utility classes
 
 
+//@import '../components/menu';
+//@import 'components/top-bar';
+//@import 'components/pagination';
+//@import 'components/modal';
+//@import 'components/slide';
+//
+//@import 'components/commodity-card';
+//
+//// include mixin
+//@include commodity-card;
 
+
+/** global variable **/
 $w: 1200px;
-body {
-    //background: #f5f5f5;
-}
 
 /** global **/
-ul {
-    /* list-style-type: none !important; */
-    /* margin-left: 0 !important; */
-    /* margin-bottom: 0 !important; */
-    /* padding-left: 0 !important; */
-}
 a {
     color: #333;
     &:hover {
         text-decoration: none !important;
     }
 }
-.menu {
-    li, li a {
-        display: inline-block;
-    }
-}
 
+.hide {
+    display: none;
+}
 /** end global **/
 
-/** components **/
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    &__box {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 600px;
-        max-width: 100%;
-        padding: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        background: white;
-    }
-    &__title {
-        padding-bottom: .5rem;
-        border-bottom: 1px solid #ccc;
-    }
-    &__container {
-        padding: .5rem;
-    }
-    select {
-        margin-bottom: .5rem;
-    }
-    &__close {
-    }
-}
 
-.search-form {
-    position: relative;
-    display: flex;
-    border: 2px solid $primary-color;
-    input {
-        padding-left: 2.5rem;
-        border: none;
-    }
-    button {
-        margin-bottom: 0;
-        padding-left: 30px;
-        padding-right: 30px;
-        border: none;
-    }
-    &:before {
-        content: "\f002";
-        font-family: FontAwesome;
-        position: absolute;
-        top: 0;
-        left: 1rem;
-        display: inline-block;
-        padding: 8px 0;
-        color: #888;
-    }
-}
-/** end **/
-
-.card {
-    width: 180px;
-    display: block;
-    //border: 1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box;
-    img {
-        width: 100%;
-        transition: all 2s;
-    }
-    &__title {
-        display: block;
-        color: #111;
-    }
-    &__price {
-        color: rgb(200,0,0);
-        &:before {
-            content: "\f157";
-            font-family: FontAwesome;
-        }
-    }
-}
-
-@import 'list';
-@import 'detail';
-@import 'member';
-@import 'cart';
-@import 'login';
-@import 'shop';
-@import 'page';
-@import 'home';
-@import 'buy';
-
-@include cart;
-@include member;
-@include list;
-@include commodity;
+//@import 'list';
+//@import 'detail';
+//@import 'member';
+//@import 'cart';
+//@import 'login';
+//@import 'shop';
+//@import 'page';
+//@import 'buy';
+//
+//@include cart;
+//@include member;
+//@include list;
+//@include commodity;
 
 
-.top-bar {
-    background: #eeeeee;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    &__container {
-        width: 1200px;
-        clear: both;
-        margin: 0 auto;
-    }
-    &__title {
-        display: inline-block;
-        padding: 0 0.8rem;
-        color: #717171;
-        font-size: 0.9rem;
-    }
-    &__left {
-    }
-    &__right {
-        float: right;
-    }
-    ul, li, li a {
-        display: inline-block;
-    }
-    a {
-        padding: 0 .5rem;
-        font-size: 14px;
-        color: #717171;
-        &:hover,
-        &:active {
-            color: $primary-color;
-        }
-    }
-}
+@import 'home/_.scss';
+@include home;
+
+
+
+
 
 
 .header {
@@ -527,21 +409,3 @@ a {
 }
 
 
-.hide {
-    display: none;
-}
-
-.badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(50%,-50%);
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    padding: 2px;
-    min-width: 1rem;
-    background: #910000;
-    color: white;
-    font-size: 0.75rem;
-    box-sizing: border-box;
-}

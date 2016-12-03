@@ -1,0 +1,7 @@
+<ul class="pagination">
+  <li><a href="#" class="prev">上一页</a></li>
+  {% for i in range(1,6) %}
+  <li><a href="#" class="{% if i == 1 %}active{% endif %}">{{ i }}</a></li>
+  {% endfor %}
+  <li><a href="#" class="next">下一页</a></li>
+</ul>

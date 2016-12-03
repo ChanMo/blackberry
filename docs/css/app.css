@@ -1462,6 +1462,16 @@ input:focus:invalid, select:focus:invalid, textarea:focus:invalid {
     .slide__nav .active a {
       background: black; }
 
+.commodity-card {
+  display: inline-block; }
+  .commodity-card__cover {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    float: left; }
+  .commodity-card__title {
+    float: left; }
+
 /** global **/
 ul {
   /* list-style-type: none !important; */
@@ -1661,6 +1671,75 @@ table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0; }
+
+.order-list {
+  font-size: 0.75rem; }
+  .order-list .fa-trash {
+    color: #999; }
+  .order-list p {
+    margin: 0; }
+  .order-list a {
+    color: #666; }
+    .order-list a:hover {
+      color: #910000; }
+  .order-list .button {
+    display: inline-block;
+    margin: 0 0 .5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: .3rem .8rem;
+    background: transparent; }
+    .order-list .button:hover {
+      color: #910000;
+      border-color: #910000; }
+  .order-list thead {
+    border: 1px solid #eee; }
+  .order-list th {
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    border: none;
+    text-align: center;
+    line-height: 1rem;
+    background: #f5f5f5;
+    color: #666; }
+  .order-list td {
+    padding: .5rem 1rem;
+    border: 1px solid #eee;
+    color: #666; }
+  .order-list__nav {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    list-style-type: none; }
+    .order-list__nav li, .order-list__nav a {
+      display: inline-block; }
+    .order-list__nav a {
+      margin-right: .8rem;
+      padding: .2rem 0;
+      border-bottom: 2px solid transparent; }
+    .order-list__nav .active a {
+      border-color: #910000; }
+  .order-list__empty td {
+    border: none; }
+  .order-list__header td {
+    background: #f5f5f5; }
+  .order-list__cover {
+    width: 300px; }
+    .order-list__cover div:first-child {
+      width: 60px;
+      height: 60px;
+      float: left; }
+    .order-list__cover div:nth-child(2) {
+      width: 200px;
+      padding-left: 1rem;
+      float: left; }
+      .order-list__cover div:nth-child(2) a {
+        color: #333; }
+  .order-list__pagination:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .order-list__pagination .pagination {
+    float: right; }
 
 .login-page__header {
   width: 1200px;
@@ -2175,10 +2254,13 @@ table {
             color: #666; }
             .member__main__left dl dd a:hover {
               color: #910000; }
+        .member__main__left dl .active a {
+          color: #910000; }
     .member__main__right {
       float: left;
       width: 1060px; }
     .member__main__item {
+      margin-bottom: 1rem;
       background: white;
       padding: 1rem;
       box-sizing: border-box; }
@@ -2374,40 +2456,63 @@ table {
     line-height: 2.5rem;
     background: #f5f5f5; }
     .commodity__nav__container {
-      width: 1200px;
+      width: 1000px;
       margin: 0 auto; }
   .commodity__main {
-    width: 1200px;
+    width: 1000px;
     margin: 0 auto; }
     .commodity__main:after {
       content: '';
       display: block;
       clear: both; }
     .commodity__main__cover {
-      width: 30%;
+      width: 40%;
       float: left;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      margin-bottom: 2rem; }
     .commodity__main__param {
-      width: 70%;
+      width: 60%;
       float: left;
+      margin-bottom: 2rem;
       padding: .5rem 1rem;
       box-sizing: border-box;
       color: #666; }
       .commodity__main__param .title {
         color: #555;
         border: none; }
-      .commodity__main__param .item {
-        padding: .5rem;
-        border-bottom: 1px solid #f5f5f5;
-        font-size: 0.75rem; }
-      .commodity__main__param .action .count-box {
-        float: left; }
-      .commodity__main__param .action .button {
-        margin-left: 2rem;
-        float: left; }
-    .commodity__main__info:before {
-      content: '';
-      display: block;
+      .commodity__main__param table tr {
+        border-bottom: 1px dashed #efefef; }
+      .commodity__main__param table > tbody > tr > td {
+        border: none;
+        padding: .5rem .5rem;
+        font-size: 0.8rem; }
+        .commodity__main__param table > tbody > tr > td:first-child {
+          width: 1%;
+          white-space: nowrap; }
+      .commodity__main__param table .param-list a {
+        display: inline-block;
+        margin: 0 1rem .5rem 0;
+        padding: .5rem 1.2rem;
+        border: 1px solid #ccc; }
+        .commodity__main__param table .param-list a:hover {
+          border: 2px solid #910000;
+          padding: calc(.5rem - 1px) calc(1.2rem - 1px); }
+      .commodity__main__param table .param-list .active {
+        border: 2px solid #910000;
+        padding: calc(.5rem - 1px) calc(1.2rem - 1px); }
+      .commodity__main__param table .param-count td {
+        padding: .2rem .5rem;
+        vertical-align: middle; }
+      .commodity__main__param table .param-action .button {
+        padding: .6rem 2.5rem;
+        margin: 0 .5rem .5rem 0; }
+        .commodity__main__param table .param-action .button:nth-child(1) {
+          background: #ffeded;
+          border: 1px solid #910000;
+          color: #910000; }
+        .commodity__main__param table .param-action .button:nth-child(2) {
+          border: 1px solid #910000; }
+    .commodity__main__info {
       clear: both; }
   .commodity .commodity-cover__main {
     margin: 0;
@@ -2418,14 +2523,18 @@ table {
       display: none; }
     .commodity .commodity-cover__main img {
       width: 100%; }
-  .commodity .commodity-cover__nav li, .commodity .commodity-cover__nav a {
-    display: inline-block; }
-  .commodity .commodity-cover__nav a {
-    border: 2px solid transparent; }
-  .commodity .commodity-cover__nav li:not(.active):hover a {
-    border-color: #910000; }
-  .commodity .commodity-cover__nav .active a {
-    border-color: #910000; }
+  .commodity .commodity-cover__nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    .commodity .commodity-cover__nav li, .commodity .commodity-cover__nav a {
+      display: inline-block; }
+    .commodity .commodity-cover__nav a {
+      border: 2px solid transparent; }
+    .commodity .commodity-cover__nav li:not(.active):hover a {
+      border-color: #910000; }
+    .commodity .commodity-cover__nav .active a {
+      border-color: #910000; }
   .commodity .price-bar {
     background: #f5f5f5;
     line-height: 2.5rem;
@@ -2450,117 +2559,43 @@ table {
     .commodity .param-choice__item .active a {
       border-color: #910000; }
   .commodity .count-box {
-    width: initial;
-    transform: scale(0.8); }
+    margin: 0;
+    width: initial; }
     .commodity .count-box td {
-      padding: 0;
-      text-align: center;
-      vertical-align: middle; }
+      border: 1px solid #ccc !important;
+      line-height: 1rem !important;
+      padding: 0 !important;
+      text-align: center !important;
+      vertical-align: middle !important; }
     .commodity .count-box__action {
-      width: 1rem; }
+      width: 1rem !important; }
     .commodity .count-box__input {
-      width: 2.5rem; }
-
-.goods-param__price {
-  background: #ccc;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 0.85rem; }
-  .goods-param__price span {
-    margin-left: 10px;
-    color: #910000;
-    font-size: 1.2rem; }
-
-.goods-param__freight {
-  padding: 10px;
-  font-size: 0.85rem;
-  border-bottom: 1px solid #ccc; }
-
-.goods-param__param__item {
-  display: flex;
-  padding: 10px; }
-
-.goods-param__param__title {
-  width: 15%;
-  padding: 5px 0; }
-
-.goods-param__param__list {
-  width: 85%; }
-  .goods-param__param__list a {
-    position: relative;
-    display: inline-block;
-    padding: 5px 12px;
-    border: 1px solid #ccc;
-    color: #333; }
-    .goods-param__param__list a:hover {
-      border-color: #910000; }
-  .goods-param__param__list .active {
-    border-color: #910000; }
-
-.goods-param__action {
-  margin-top: 30px;
-  display: flex; }
-  .goods-param__action__count {
-    display: block;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
-    border: 1px solid #ccc;
-    margin-right: 30px;
-    position: relative;
-    box-sizing: border-box; }
-    .goods-param__action__count input {
-      text-align: center;
-      padding: 0;
-      border: none;
-      width: 100%; }
-    .goods-param__action__count i {
-      display: block;
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: -1px;
-      right: -20px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      text-align: center;
-      line-height: 20px; }
-      .goods-param__action__count i:nth-child(2) {
-        top: -1px; }
-      .goods-param__action__count i:nth-child(3) {
-        top: 19px;
-        border-top: none; }
-  .goods-param__action .button {
-    background: #910000;
-    color: white;
-    border: none;
-    padding: 12px 20px; }
-    .goods-param__action .button:before {
-      content: "\f217";
-      font-family: FontAwesome;
-      margin-right: 5px; }
-
-.goods-info {
-  width: 100%;
-  clear: both;
-  margin-top: 20px;
-  padding: 10px; }
+      width: 2.5rem !important; }
 
 .tabs {
-  border-bottom: 1px solid #910000; }
-  .tabs li, .tabs li a {
-    display: inline-block; }
-  .tabs a {
-    color: #333;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-top: 2px solid #aaa;
+  background: #f5f5f5; }
+  .tabs li, .tabs a {
     display: inline-block;
-    padding: 10px 20px;
-    background: #ccc;
+    box-sizing: border-box; }
+  .tabs a {
+    position: relative;
+    color: #333;
+    padding: .5rem 1rem;
     font-size: 0.85rem; }
     .tabs a:hover {
-      color: #8c0000; }
+      color: #910000; }
     .tabs a.active {
-      background: #8c0000;
-      color: white; }
+      border-top: 2px solid #910000;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid white;
+      color: #910000;
+      background: white;
+      margin: -2px -1px -1px -1px; }
 
 .tabs-content {
   padding: 10px; }
@@ -2569,23 +2604,22 @@ table {
   .tabs-content .active {
     display: block; }
 
-.comments {
-  width: 100%;
-  border: none; }
-  .comments tr {
-    display: table-row; }
-  .comments td {
-    border: none;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    font-size: 0.85rem; }
-    .comments td:nth-child(1) {
-      width: 60%; }
-    .comments td:nth-child(2) {
-      width: 20%; }
-    .comments td:nth-child(3) {
-      width: 20%; }
-  .comments span {
+.comments tr {
+  border-bottom: 1px solid #eee; }
+
+.comments td {
+  border: none;
+  padding: 1rem;
+  font-size: 0.85rem; }
+  .comments td:nth-child(1) {
+    width: 60%;
+    color: #333; }
+  .comments td:not(:nth-child(1)) {
+    width: 20%;
+    color: #666;
+    vertical-align: middle;
+    text-align: center; }
+  .comments td span {
     font-size: 0.75rem;
     color: #666; }
 

@@ -1,10 +1,8 @@
 /**
  * home scss
  */
-$primary-color: #910000;
-$height: 450px;
-$w: 1200px;
 
+@mixin home {
 .main {
     width: 100%;
     height: $height;
@@ -165,4 +163,5 @@ $w: 1200px;
             background: #999;
         }
     }
-}
+}}
+

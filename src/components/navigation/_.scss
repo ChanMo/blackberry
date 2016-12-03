@@ -1,0 +1,62 @@
+.top-bar {
+  $height: 4rem;
+  width: 100%;
+  height: $height;
+  line-height: $height;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  background: $primary-color;
+  color: white;
+  a {
+      color: white;
+  }
+  font-size: 0.85rem;
+  .menu {
+    line-height: $height;
+    a {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+.top-bar_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.top-bar {
+    background: #eeeeee;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    &__container {
+        width: 1200px;
+        clear: both;
+        margin: 0 auto;
+    }
+    &__title {
+        display: inline-block;
+        padding: 0 0.8rem;
+        color: #717171;
+        font-size: 0.9rem;
+    }
+    &__left {
+    }
+    &__right {
+        float: right;
+    }
+    ul, li, li a {
+        display: inline-block;
+    }
+    a {
+        padding: 0 .5rem;
+        font-size: 14px;
+        color: #717171;
+        &:hover,
+        &:active {
+            color: $primary-color;
+        }
+    }
+}
+
+

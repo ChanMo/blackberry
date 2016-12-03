@@ -21,7 +21,7 @@
       <div class="member__main__left">
         <dl>
           <dt>订单中心</dt>
-          <dd><a href="#">我的订单</a></dd>
+          <dd class="active"><a href="orders.html">我的订单</a></dd>
           <dd><a href="#">取消订单记录</a></dd>
         </dl>
         <dl>
@@ -31,9 +31,7 @@
         </dl>
       </div>
       <div class="member__main__right">
-        <div class="member__main__item">
-          <img src="https://s-media-cache-ak0.pinimg.com/236x/53/61/fd/5361fd02c03cc540d32697dd8217f7ba.jpg">
-        </div>
+        {% block member %}{% endblock %}
       </div>
     </div>
   </div>

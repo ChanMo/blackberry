@@ -5,11 +5,7 @@
 
   <div class="commodity__nav">
     <div class="commodity__nav__container">
-      <ul class="crumbs-nav">
-        <li><a href="#">手机</a></li>
-        <li><a href="#">apple</a></li>
-        <li><a href="#">iphone7</a></li>
-      </ul>
+      {% include "components/_crumbs.html" %}
     </div>
   </div>
 
@@ -28,58 +24,74 @@
     </div>
     <div class="commodity__main__param">
       <p class="title">邻舍 懒人沙发布艺沙发创意折叠沙发小户型榻榻米单人 米奇</p>
-      <p class="price-bar">京 东 价 ￥1200 </p>
-      <div class="item">运费: 0</div>
-      <div class="item param-choice">
-        {% for item in range(0,2) %}
-        <div class="param-choice__item">
-          <span>选择颜色:</span>
-          <ul>
-            {% for i in range(0,10) %}
-            <li {% if i == 0 %}class="active"{% endif %}><a href="#">black</a></li>
+      <p class="price-bar">价格 ￥1200 </p>
+      <table>
+        <tr><td>运费</td><td>0</td></tr>
+        <tr class="param-list">
+          <td>选择颜色</td>
+          <td>
+            {% for i in range(0,7) %}
+            <a href="#" {% if loop.first %} class="active" {% endif %}>black</a>
             {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="action">
-
-        <table class="count-box">
-          <tr>
-            <td class="count-box__input" rowspan="2">1</td>
-            <td class="count-box__action"><i class="fa fa-angle-up"></i></td>
-          </tr>
-          <tr>
-            <td class="count-box__action"><i class="fa fa-angle-down"></i></td>
-          </tr>
-        </table>
-
-        <a class="button" href="cart.html">加入购物车</a>
-      </div>
+          </td>
+        </tr>
+        <tr class="param-count">
+          <td>数量</td>
+          <td>
+            <table class="count-box">
+              <tr>
+                <td class="count-box__input" rowspan="2">1</td>
+                <td class="count-box__action"><i class="fa fa-angle-up"></i></td>
+              </tr>
+              <tr>
+                <td class="count-box__action"><i class="fa fa-angle-down"></i></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr class="param-action">
+          <td></td>
+          <td>
+            <a class="button" href="cart.html">立即购买</a>
+            <a class="button" href="cart.html">加入购物车</a>
+          </td>
+        </tr>
+      </table>
     </div>
 
     <div class="commodity__main__info">
       <ul class="tabs">
         <li><a href="#" class="active">商品介绍</a></li>
+        <li><a href="#">规格参数</a></li>
+        <li><a href="#">包装清单</a></li>
         <li><a href="#">商品评价</a></li>
       </ul>
       <div class="tabs-content">
         <div class="tabs-panel active">
-          introduce
+          <img src="https://img20.360buyimg.com/vc/jfs/t2764/164/1019244286/353092/1afc7830/573175e7Nde8d02a6.jpg">
+        </div>
+        <div class="tabs-panel">
+          size
+        </div>
+        <div class="tabs-panel">
+          pass
         </div>
         <div class="tabs-panel">
           <table class="comments">
             {% for i in range(0,6) %}
             <tr>
               <td>
-                东西很COOL 无线耳机质量也不错 试听了一下耳机的音质很好 用这个经常去健身房边练边听音乐 挺方便 Very Love it！
-                <span>16/10/01</span>
+                <p>东西很COOL 无线耳机质量也不错 试听了一下耳机的音质很好 用这个经常去健身房边练边听音乐 挺方便 Very Love it！</p>
+                <p><span>16/10/01</span></p>
               </td>
               <td>Gold, small</td>
               <td>chen</td>
             </tr>
             {% endfor %}
           </table>
+          <div>
+            {% include 'components/_pagination.html' %}
+          </div>
         </div>
       </div>
     </div>

@@ -18,19 +18,22 @@ var del = require('del');
 
 /** sass **/
 gulp.task('sass', function(){
-    return gulp.src('src/scss/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src(['src/scss/**/*.scss','src/components/**/*.scss','src/page/**.*.scss'])
+        .pipe(sass({
+          includePaths: 'src/page/'
+        }).on('error', sass.logError))
         .pipe(gulp.dest('src/css'))
-        .pipe(gulp.dest('docs/css'))
+        //.pipe(gulp.dest('docs/css'))
         .pipe(browserSync.reload({stream:true}));
 });
 
 /** js **/
 gulp.task('js', function(){
-    return gulp.src('src/js/*.+(js|json)')
+    return gulp.src(['src/js/*.+(js|json)','src/components/**/*.js','src/page/**.js'])
         .pipe(gulp.dest('docs/js'))
         .pipe(browserSync.reload({stream:true}));
 });
+
 
 /** images **/
 gulp.task('images', function(){
@@ -62,9 +65,9 @@ gulp.task('useref', function(){
 
 /** nunjucksRender **/
 gulp.task('nunjucksRender', function(){
-    return gulp.src(['src/html/**/*.html'])
+    return gulp.src(['src/html/*.html'])
         .pipe(nunjucksRender({
-            path: ['src/html/']
+            path: ['src/html/', 'src/page/', 'src/components/']
         }))
         .pipe(gulp.dest('src'))
         .pipe(browserSync.reload({stream:true}));
