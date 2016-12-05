@@ -19,7 +19,7 @@
       <ul class="nav-ul">
         <li>
           <a href="#" class="category-toggle">商品分类</a>
-          <ul class="category-main ">
+          <ul class="category-main hide">
             
             
             <li>
@@ -3691,6 +3691,123 @@
     
 
     
+<div class="container buy-page">
+  <div class="buy__item">
+    <a class="float-right address-create" onclick="modal('#modal-address')">create new</a>
+    <h4>Address</h4>
+    <table class="address-list">
+      <tr class="active">
+        <td>
+          <h5>Chan Mo<small>15550005740</small></h5>
+          <div>Shandong, Jinan, Gaoxin</div>
+        </td>
+        <td>
+          <a href="#">edit</a>
+          <a href="#">delete</a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <h5>Chan Mo<small>15550005740</small></h5>
+          <div>Shandong, Jinan, Gaoxin</div>
+        </td>
+        <td>
+          <a href="#">edit</a>
+          <a href="#">delete</a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <h5>Chan Mo<small>15550005740</small></h5>
+          <div>Shandong, Jinan, Gaoxin</div>
+        </td>
+        <td>
+          <a href="#">edit</a>
+          <a href="#">delete</a>
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+  <div class="buy__item">
+    <h4>Goods</h4>
+    <table class="buy-goods table_bordered">
+      
+      <tr>
+        <td class="cart-goods">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/51pvJmK6HcL._SS100_.jpg">
+        </td>
+        <td>
+          <div class="name">Blackberry passport</div>
+          <div class="param">black, small</div>
+        </td>
+        <td class="price">4800</td>
+        <td><a href="#">link</a></td>
+      </tr>
+      
+      <tr>
+        <td class="cart-goods">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/51pvJmK6HcL._SS100_.jpg">
+        </td>
+        <td>
+          <div class="name">Blackberry passport</div>
+          <div class="param">black, small</div>
+        </td>
+        <td class="price">4800</td>
+        <td><a href="#">link</a></td>
+      </tr>
+      
+      <tr>
+        <td class="cart-goods">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/51pvJmK6HcL._SS100_.jpg">
+        </td>
+        <td>
+          <div class="name">Blackberry passport</div>
+          <div class="param">black, small</div>
+        </td>
+        <td class="price">4800</td>
+        <td><a href="#">link</a></td>
+      </tr>
+      
+    </table>
+  </div>
+  <div class="buy__item">
+    <h4>Pay</h4>
+    <div class="buy-pay">
+      <h4 class="price">10000</h4>
+      <a href="#" class="button">Alipay</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal hide" id="modal-address">
+  <div class="modal__box">
+    <a href="#" class="modal__close float-right"><i class="fa fa-remove"></i></a>
+  <h4 class="modal__title">Modal</h4>
+  <div class="modal__container">
+    <form>
+      <label>Name
+        <input type="text">
+      </label>
+      <label>City
+        <select><option>Shandong</option></select>
+        <select></select>
+        <select></select>
+      </label>
+      <label>REmark
+        <textarea></textarea>
+      </label>
+    </form>
+  </div>
+  <div clsss="modal__action">
+    <button class="button">ok</button>
+    <button class="button modal__close">cancel</button>
+  </div>
+  </div>
+</div>
+
 
 
     <!-- build:js js/app.min.js -->
@@ -3698,5 +3815,23 @@
     <script src="js/app.js"></script>
     <!-- endbuild -->
     
+<script>
+  $(".address-list tr").click(function(){
+  if($(this).hasClass("active")){
+  }else{
+  $(this).addClass("active");
+  $(this).siblings().removeClass("active");
+  }
+  });
+
+  function modal(ele){
+  $(ele).show();
+  }
+
+  $(".modal .modal__close").click(function(){
+  $(this).parents(".modal").hide();
+  });
+</script>
+
  </body>
 </html>
