@@ -62,9 +62,11 @@ a {
 //@include list;
 //@include commodity;
 
+$height: 450px;
 
-@import 'home/_.scss';
-@include home;
+//@import 'src/page/home/_.scss';
+@import 'src/page/home/home.scss';
+//@include home;
 
 
 
