@@ -64,10 +64,30 @@ a {
 
 $height: 450px;
 
+
+// components
+@import 'src/components/navigation/_.scss';
+@include topbar;
+
+//@import 'src/components/crumbs/_.scss';
+//@import 'src/components/footer/_.scss';
+@import 'src/components/menu/_.scss';
+@import 'src/components/modal/_.scss';
+@import 'src/components/pagination/_.scss';
+@include pagination;
+@import 'src/components/search-form/_.scss';
+@include search-form;
+@import 'src/components/slide/_.scss';
+
 //@import 'src/page/home/_.scss';
 @import 'src/pages/home/home.scss';
-//@include home;
-
+@include home;
+@import 'src/pages/cart/cart.scss';
+@include cart;
+@import 'src/pages/member/member.scss';
+@include member;
+@import 'src/pages/list/list.scss';
+@include list;
 
 
 

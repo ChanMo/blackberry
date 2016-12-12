@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blackberry Market</title>
 
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- build:css css/app.min.css -->
     <link rel="stylesheet" href="/css/app.css" />
     <!-- endbuild -->
@@ -14,42 +15,7 @@
   </head>
   <body>
 
-    {% block nav %}
-    <div class="nav">
-      <ul class="nav-ul">
-        <li>
-          <a href="#" class="category-toggle">商品分类</a>
-          <ul class="category-main {% block is_home %}{% endblock %}">
-            {% set category_list = ['家用电器','手机、运营商、数码','电脑、办公','家居、家具、家装、厨具','男装、女装、童装、内衣','个护化妆、清洁用品、宠物','鞋靴、箱包、珠宝、奢侈品','运动户外、钟表','汽车、汽车用品','母婴、玩具乐器','食品、酒类、生鲜、特产','医药保健','图书、音像、电子书','彩票、旅行、充值、票务','理财、众筹、白条、保险'] %}
-            {% for i in category_list %}
-            <li>
-              <a href="#" class="active">{{ i }}</a>
-              <div class="category-content">
-                <table>
-                  {% for i in range(0,5) %}
-                  <tr>
-                    <td><a href="#">当季流行</a></td>
-                    <td>
-                      {% for i in range(0,20) %}
-                      <a href="#">沙发</a>
-                      {% endfor %}
-                    </td>
-                  </tr>
-                  {% endfor %}
-                </table>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
-        </li>
-        <li><a href="shops.html">Item1</a></li>
-        <li><a href="shops.html">Item2</a></li>
-      </ul>
-    </div>
-    {% endblock %}
-
     {% block main %}{% endblock %}
-
 
     <!-- build:js js/app.min.js -->
     <script src="js/jquery.min.js"></script>

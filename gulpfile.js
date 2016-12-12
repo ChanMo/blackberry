@@ -2,7 +2,7 @@
  * my gulp file
  * @author chen
  * @email chen.orange@aliyun.com
- * @website http://findchen.com
+ * @website http://www.findchen.com
  */
 
 var gulp = require('gulp');
@@ -21,7 +21,6 @@ gulp.task('sass', function(){
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('cache/css')) // compile to cache css
-        //.pipe(gulp.dest('docs/css'))
         .pipe(browserSync.reload({stream:true}));
 });
 
@@ -85,6 +84,7 @@ gulp.task('useref', function(){
 /** nunjucksRender **/
 gulp.task('nunjucksRender', function(){
     //return gulp.src(['src/templates/*.html','src/pages/**/*.html', 'src/components/**/*.html'])
+    //return gulp.src(['src/*.html', 'src/pages/**/*.html', 'src/components/**/*.html'])
     return gulp.src('src/**/*.html')
         .pipe(nunjucksRender({
             path: 'src'

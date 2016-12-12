@@ -1,3 +1,4 @@
+@mixin pagination {
 .pagination {
     @extend .menu;
     margin: $pagination-margin;
@@ -15,4 +16,5 @@
         background: map_get($palette, primary);
         color: white;
     }
-}
+}}
+

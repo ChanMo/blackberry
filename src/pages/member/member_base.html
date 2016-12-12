@@ -1,19 +1,15 @@
 {% extends "base.html" %}
-{% block header %}{% endblock %}
-{% block nav %}{% endblock %}
 {% block main %}
+{% include 'components/navigation/_.html' %}
 <div class="member">
   <div class="member__header">
     <div class="member__header__container">
       <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="#">账户设置</a></li>
-        <li><a href="#">信息</a></li>
+        {% for i in ['首页','账户设置','信息'] %}
+        <li><a href="/pages/home/home.html">{{ i }}</a></li>
+        {% endfor %}
       </ul>
-      <div class="search-form">
-        <input type="search">
-        <input type="submit" value="搜&nbsp;索">
-      </div>
+      {% include 'components/search-form/_.html' %}
     </div>
   </div>
   <div class="member__main">
@@ -21,7 +17,7 @@
       <div class="member__main__left">
         <dl>
           <dt>订单中心</dt>
-          <dd class="active"><a href="orders.html">我的订单</a></dd>
+          <dd class="active"><a href="/pages/order/orders.html">我的订单</a></dd>
           <dd><a href="#">取消订单记录</a></dd>
         </dl>
         <dl>
