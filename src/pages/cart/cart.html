@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% block main %}
-{% include 'components/navigation/_.html' %}
-
 <div class="cart">
+
+  <!-- navigation -->
+  {% include 'components/navigation/_.html' %}
+
+  <div class="cart__container">
+  <!-- header -->
   <div class="cart__header">
     {% include 'components/search-form/_.html' %}
   </div>
@@ -29,6 +33,7 @@
             <input type="checkbox" class="check-item">
           </td>
           <td>
+            {% include 'components/card/_.html' %}
           </td>
           <td class="price">4800</td>
           <td>
@@ -57,6 +62,7 @@
         <span>合计（不含运费）： ￥<em>965.62</em></span>
       </div>
     </div>
+  </div>
   </div>
 </div>
 

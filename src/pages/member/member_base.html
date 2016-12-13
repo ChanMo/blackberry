@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block main %}
-{% include 'components/navigation/_.html' %}
 <div class="member">
+
+  <!-- navigation -->
+  {% include 'components/navigation/_.html' %}
+
+  <!-- header -->
   <div class="member__header">
     <div class="member__header__container">
       <ul>
@@ -9,6 +13,7 @@
         <li><a href="/pages/home/home.html">{{ i }}</a></li>
         {% endfor %}
       </ul>
+      <!-- search form -->
       {% include 'components/search-form/_.html' %}
     </div>
   </div>

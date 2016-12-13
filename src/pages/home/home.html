@@ -1,45 +1,72 @@
 {% extends "base.html" %}
 {% block main %}
 
-{% include 'components/navigation/_.html' %}
+<!-- suggestion list -->
+{% set suggestion_list = ['黑莓','索尼','苹果','特斯拉'] %}
+<!-- set category list -->
+{% set category_list = ['家用电器','手机、运营商、数码','电脑、办公','家居、家具、家装、厨具','男装、女装、童装、内衣','个护化妆、清洁用品、宠物','鞋靴、箱包、珠宝、奢侈品','运动户外、钟表','汽车、汽车用品','母婴、玩具乐器','食品、酒类、生鲜、特产','医药保健','图书、音像、电子书','彩票、旅行、充值、票务','理财、众筹、白条、保险'] %}
+<!-- banner list -->
+{% set banner_list = [{'color':'#E8E8E8','image':'https://img.alicdn.com/tps/i4/TB1lkAWMVXXXXbGapXXSutbFXXX.jpg_q100.jpg'},{'color':'#C2121D','image':'http://img.alicdn.com/imgextra/i2/5/TB2Y7WjaurAQeBjSZFPXXXbmXXa_!!5-0-yamato.jpg_q100.jpg_.webp'},{'color':'#F28607','image':'https://aecpm.alicdn.com/simba/img/TB1C71sLXXXXXb5XVXXSutbFXXX.jpg'}] %}
+<!-- category recommand -->
+{% set category_recommand_list = [
+{'color':'#398B94','title':'爱逛','recommand':['男装','女装','鞋袜','外套','围巾']},
+{'color':'#752252','title':'电脑数码','recommand':['电脑','手机','单反','手表']},
+{'color':'#E66804','title':'电脑数码','recommand':['电脑','手机','单反','手表']},
+{'color':'#CA3559','title':'电脑数码','recommand':['电脑','手机','单反','手表']},
+{'color':'#734D8B','title':'电脑数码','recommand':['电脑','手机','单反','手表']},
+{'color':'#5B6A8F','title':'电脑数码','recommand':['电脑','手机','单反','手表']},
+{'color':'#4589A8','title':'电脑数码','recommand':['电脑','手机','单反','手表']},
+{'color':'#EDB327','title':'电脑数码','recommand':['电脑','手机','单反','手表']}
+] %}
 
-    <!-- header -->
-    {% block header %}
-    <div class="header">
-      <!-- logo -->
-      <a href="/pages/home/home.html"><img src="https://s-media-cache-ak0.pinimg.com/564x/81/4c/fd/814cfd70021e254dc9bb4032775e8695.jpg" class="header__logo"></a>
+<div class="home">
 
-      <!-- search -->
-      <div class="header__search">
-        {% include 'components/search-form/_.html' %}
-        <div class="header__tips">
-          {% for i in ['黑莓','索尼','苹果','特斯拉'] %}
-          <a href="/pages/list/list.html">{{ i }}</a>
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- cart -->
-      <a class="header__cart button" href="/pages/cart/cart.html">我的购物车<span class="badge">15</span></a>
+  <!-- fixed topbar -->
+  <div class="top-bar top-bar_fixed">
+    <div class="top-bar__container">
+      <a href="#" class="logo"><img src="https://s-media-cache-ak0.pinimg.com/564x/4a/08/d0/4a08d0747ceb46ca019e0b46c1a63378.jpg"></a>
+      {% include 'components/search-form/_.html' %}
     </div>
-    {% endblock %}
+  </div>
 
-    <div class="nav">
-      <ul class="nav-ul">
+  <!-- navigation -->
+  {% include 'components/navigation/_.html' %}
+
+  <!-- header -->
+  <div class="home__header">
+    <!-- logo -->
+    <a href="/pages/home/home.html" class="logo"><img src="" alt="logo"></a>
+    <!-- search -->
+    <div class="home__header__search">
+      {% include 'components/search-form/_.html' %}
+      <ul>
+        {% for i in suggestion_list %}
+        <li><a href="/pages/list/list.html">{{ i }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- cart -->
+    <a class="home__header__cart button" href="/pages/cart/cart.html">我的购物车<span class="badge">15</span></a>
+  </div>
+
+
+    <!-- nav -->
+    <div class="home__nav">
+      <ul class="home__nav__main">
         <li>
-          <a href="#" class="category-toggle">商品分类</a>
-          <ul class="category-main {% block is_home %}{% endblock %}">
-            {% set category_list = ['家用电器','手机、运营商、数码','电脑、办公','家居、家具、家装、厨具','男装、女装、童装、内衣','个护化妆、清洁用品、宠物','鞋靴、箱包、珠宝、奢侈品','运动户外、钟表','汽车、汽车用品','母婴、玩具乐器','食品、酒类、生鲜、特产','医药保健','图书、音像、电子书','彩票、旅行、充值、票务','理财、众筹、白条、保险'] %}
+          <a href="javascript:;">商品分类</a>
+          <ul class="category-main">
             {% for i in category_list %}
             <li>
-              <a href="#" class="active">{{ i }}</a>
-              <div class="category-content">
+              <a href="#">{{ i }}</a>
+              <!-- category content -->
+              <div>
                 <table>
-                  {% for i in range(0,5) %}
+                  {% for i in range(0,4) %}
                   <tr>
                     <td><a href="#">当季流行</a></td>
                     <td>
-                      {% for i in range(0,20) %}
+                      {% for i in range(0,10) %}
                       <a href="#">沙发</a>
                       {% endfor %}
                     </td>
@@ -51,98 +78,123 @@
             {% endfor %}
           </ul>
         </li>
-        <li><a href="shops.html">Item1</a></li>
-        <li><a href="shops.html">Item2</a></li>
+        <li><a href="shops.html">超市</a></li>
+        <li><a href="shops.html">生鲜</a></li>
       </ul>
     </div>
 
-<div class="main">
-  <div class="main__content">
-    <div class="main__center">
+    <!-- banner zone -->
+    <div class="home__banner">
+      <div class="home__banner__container">
 
-      <!-- slide -->
-      <div class="slide">
-        <ul class="slide__container">
-          <li class="active" data-color="#910000">
-            <a href="http://findchen.com">
-              <img src="https://img.alicdn.com/tps/i4/TB1lkAWMVXXXXbGapXXSutbFXXX.jpg_q100.jpg">
-            </a>
-          </li>
-          <li data-color="#348800">
-            <a href="#">
-              <img src="http://img.alicdn.com/imgextra/i2/5/TB2Y7WjaurAQeBjSZFPXXXbmXXa_!!5-0-yamato.jpg_q100.jpg_.webp">
-            </a>
-          </li>
-          <li data-color="#003490">
-            <a href="#">
-              <img src="https://aecpm.alicdn.com/simba/img/TB1C71sLXXXXXb5XVXXSutbFXXX.jpg">
-            </a>
-          </li>
-        </ul>
-        <div class="slide__action">
-          <a href="#"><i class="fa fa-angle-left"></i></a>
-          <a href="#"><i class="fa fa-angle-right"></i></a>
-        </div>
-        <ul class="slide__nav">
-          <li><a href="#" class="active"></a></li>
-          {% for i in range(0,2) %}
-          <li><a href="#"></a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <!-- end -->
-
-    </div>
-
-    <div class="main__right">
-      <img src="https://s-media-cache-ak0.pinimg.com/564x/fd/6c/39/fd6c39a1f90005133ff147decf7aff9e.jpg">
-      <span>Hi~Chenorangeorangeorange</span>
-      <a href="#" class="main__right__login">请登录</a>
-      <a href="#" class="main__right__register">免费注册</a>
-    </div>
-  </div>
-</div>
-
-<div id="content">
-  <div class="home-content">
-
-    <div class="home-recommend">
-      {% for item in range(0,4) %}
-      <a class="home-recommend__item">
-        <img src="img/goods1.png">
-      </a>
-      {% endfor %}
-    </div>
-
-    {% for i in range(0,3) %}
-    <div class="category-card">
-      <div class="category-card__title">
-        <h2>TEST{{ i }}</h2>
-        <ul class="menu">
-          {% for j in range(0,6) %}
-          <li><a href="#" {% if loop.first %}class="active"{% endif %}>test{{ j }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="category-card__content">
-        <div class="category-card__left">
-        </div>
-        <div class="category-card__right">
-          {% for j in range(0,6) %}
-          <div class="category-card__right__content {% if loop.first %}active{% endif %}">
-            {% for k in range(0,10) %}
-            <a href="#" class="card">
-              <img src="http://img10.360buyimg.com/N3/jfs/t3049/94/1890472248/131923/6841598c/57d61617Nd49c568b.jpg">
-              <span class="card__title">blackberry priv{{ j }}{{ k }}</span>
-              <span class="card__price">180</span>
-            </a>
+        <!-- slide -->
+        <div class="slide">
+          <ul class="slide__main">
+            {% for banner in banner_list %}
+            <li {% if loop.first %}class="active"{% endif %} data-color="{{ banner.color }}">
+              <a href="javascript:;" style="background-image:url({{ banner.image }});"></a>
+            </li>
             {% endfor %}
-          </div>
-          {% endfor %}
+          </ul>
+          <ul class="slide__nav">
+            {% for i in range(0,3) %}
+            <li {% if loop.first %}class="active"{% endif %}><a href="#"></a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- end -->
+    
+        <div class="home__banner__user">
+          <img src="https://s-media-cache-ak0.pinimg.com/564x/fd/6c/39/fd6c39a1f90005133ff147decf7aff9e.jpg" class="avatar">
+          <p>Hi~Chenorangeorangeorange</p>
+          <p><a href="#" class="button button_full">请登录</a></p>
+          <p><a href="#">免费注册</a></p>
         </div>
       </div>
     </div>
-    {% endfor %}
+
+    <div class="home__container">
+
+      <div class="home__recommend">
+        {% for item in range(0,4) %}
+        <a href="javascript:;"><img src="https://img10.360buyimg.com/cms/s188x184_jfs/t3622/297/2230492773/18287/1e02f14c/584e230eN344b318b.jpg!q90.webp"></a>
+        {% endfor %}
+      </div>
+
+
+      <!-- category recommand start -->
+      <div class="home__category-recommand">
+
+        <!-- nav -->
+        <ul class="home__category-recommand__nav">
+        {% for category in category_recommand_list %}
+        <li><a href="#category-link-{{ loop.index }}">{{ category.title }}</a></li>
+        {% endfor %}
+        <li><a href="javascript:scroll_to_top();">顶部<br><i class="fa fa-caret-up"></i></a></li>
+        </ul>
+
+        <!-- content -->
+        {% for category in category_recommand_list %}
+        <table class="section" id="category-link-{{ loop.index }}">
+          <thead style="background:{{ category.color }};">
+          <tr>
+            <th>{{ category.title }}</th>
+            <th colspan=4>
+              <ul>
+                {% for recommand in category.recommand %}
+                <li><a href="#" {% if loop.first %}class="active"{% endif %}>{{ recommand }}</a></li>
+                {% endfor %}
+              </ul>
+            </th>
+          </tr>
+          </thead>
+          <tr>
+            <td rowspan=2><img src="https://img10.360buyimg.com/cms/s193x260_jfs/t4009/178/318883821/96590/6663945/5847d8e0N4da0edfa.jpg!q90"></td>
+            {% for i in range(0,4) %}
+            <td><a href="#"><img src="https://img30.360buyimg.com/da/s193x130_jfs/t3322/362/2139119048/52459/5a8d56d1/5844c345Nd2e0d58d.jpg!q90"></a></td>
+            {% endfor %}
+          </tr>
+          <tr>
+            {% for i in range(0,4) %}
+            <td><a href="#"><img src="https://img30.360buyimg.com/da/s193x130_jfs/t3322/362/2139119048/52459/5a8d56d1/5844c345Nd2e0d58d.jpg!q90"></a></td>
+            {% endfor %}
+          </tr>
+        </table>
+        {% endfor %}
+      </div>
+      <!-- category recommand end -->
+
+    </div>
   </div>
 </div>
+{% endblock %}
+{% block js %}
+<script src="https://cdn.bootcss.com/jQuery-viewport-checker/1.8.7/jquery.viewportchecker.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+<script>
+$(function(){
+  /** scroll event **/
+  $(window).scroll(function(){
+    var scroll_top = $(document).scrollTop();
+    var window_height = $(window).height();
+    if(scroll_top > window_height){
+      $(".top-bar_fixed").addClass("top-bar_fixed_active");
+    }else{
+      $(".top-bar_fixed").removeClass("top-bar_fixed_active");
+    }
+  });
+  $(".home__category-recommand").viewportChecker({
+    classToAdd: 'active',
+    offset: '100%',
+    repeat: true,
+    //callbackFunction:function(){
+      //$(".home__category-recommand__nav").show();
+    //}
+  });
+  /** category recommand **/
+  $(".home__category-recommand__nav").onePageNav({
+    currentClass: "active"
+  });
+});
+</script>
 {% endblock %}

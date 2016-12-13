@@ -1,9 +1,18 @@
 @mixin cart {
     $w: 1000px;
     .cart {
+      .top-bar__container {
         width: $w;
         margin: 0 auto;
         max-width: 100%;
+      }
+      &__container {
+        width: $w;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
         .check-all {
             margin-right: .5rem;
         }
@@ -17,15 +26,6 @@
             .search-form {
                 width: 40%;
                 float: right;
-                border: 1px solid $primary-color;
-                input {
-                    margin: 0;
-                    border: none;
-                    font-size: 0.85rem;
-                }
-                input[type='submit'] {
-                    padding: 0 1rem 0 1rem;
-                }
             }
         }
         &__main {
@@ -71,20 +71,6 @@
                     }
                     th, td {
                         border: none;
-                    }
-                }
-            }
-            .commodity {
-                &__cover {
-                    width: 80px;
-                    height: 80px;
-                    float: left;
-                }
-                &__title {
-                    width: 300px;
-                    float: left;
-                    p {
-                        margin: 0;
                     }
                 }
             }

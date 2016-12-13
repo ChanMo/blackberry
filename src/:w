@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% block main %}
+
+<!-- suggestion list -->
+{% set suggestion_list = ['黑莓','索尼','苹果','特斯拉'] %}
+<!-- set category list -->
+{% set category_list = ['家用电器','手机、运营商、数码','电脑、办公','家居、家具、家装、厨具','男装、女装、童装、内衣','个护化妆、清洁用品、宠物','鞋靴、箱包、珠宝、奢侈品','运动户外、钟表','汽车、汽车用品','母婴、玩具乐器','食品、酒类、生鲜、特产','医药保健','图书、音像、电子书','彩票、旅行、充值、票务','理财、众筹、白条、保险'] %}
+<!-- banner list -->
+{% set banner_list = ['https://img.alicdn.com/tps/i4/TB1lkAWMVXXXXbGapXXSutbFXXX.jpg_q100.jpg','http://img.alicdn.com/imgextra/i2/5/TB2Y7WjaurAQeBjSZFPXXXbmXXa_!!5-0-yamato.jpg_q100.jpg_.webp','https://aecpm.alicdn.com/simba/img/TB1C71sLXXXXXb5XVXXSutbFXXX.jpg'] %}
+
+
+<div class="home">
+  <!-- navigation -->
+  {% include 'components/navigation/_.html' %}
+
+  <!-- header -->
+  <div class="home__header">
+    <!-- logo -->
+    <a href="/pages/home/home.html" class="logo"><img src="" alt="logo"></a>
+    <!-- search -->
+    <div class="home__header__search">
+      {% include 'components/search-form/_.html' %}
+      <ul>
+        {% for i in suggestion_list %}
+        <li><a href="/pages/list/list.html">{{ i }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- cart -->
+    <a class="home__header__cart button" href="/pages/cart/cart.html">我的购物车<span class="badge">15</span></a>
+  </div>
+
+
+    <!-- nav -->
+    <div class="home__nav">
+      <ul class="home__nav__main">
+        <li>
+          <a href="javascript:;">商品分类</a>
+          <ul class="category-main">
+            {% for i in category_list %}
+            <li>
+              <a href="#">{{ i }}</a>
+              <!-- category content -->
+              <div>
+                <table>
+                  {% for i in range(0,4) %}
+                  <tr>
+                    <td><a href="#">当季流行</a></td>
+                    <td>
+                      {% for i in range(0,10) %}
+                      <a href="#">沙发</a>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="shops.html">超市</a></li>
+        <li><a href="shops.html">生鲜</a></li>
+      </ul>
+    </div>
+
+    <!-- banner zone -->
+    <div class="home__banner">
+      <div class="home__banner__container">
+        <div class="">
+    
+          <!-- slide -->
+          <div class="slide">
+            <ul class="slide__main">
+              {% for banner in banner_list %}
+              <li {% if loop.first %}class="active"{% endif %}>
+                <a href="javascript:;" style="background-image:url({{ banner }});"></a>
+              </li>
+              {% endfor %}
+            </ul>
+            <a href="#" class="slide__action slide__action_left"><i class="fa fa-angle-left"></i></a>
+            <a href="#" class="slide__action slide__action_right"><i class="fa fa-angle-right"></i></a>
+            <ul class="slide__nav">
+              {% for i in range(0,3) %}
+              <li {% if loop.first %}class="active"{% endif %}><a href="#"></a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <!-- end -->
+    
+        </div>
+    
+        <div class="home__banner__user">
+          <img src="https://s-media-cache-ak0.pinimg.com/564x/fd/6c/39/fd6c39a1f90005133ff147decf7aff9e.jpg" class="avatar">
+          <p>Hi~Chenorangeorangeorange</p>
+          <p><a href="#" class="button button_full">请登录</a></p>
+          <p><a href="#">免费注册</a></p>
+        </div>
+      </div>
+    </div>
+
+<div id="content">
+  <div class="home-content">
+
+    <div class="home-recommend">
+      {% for item in range(0,4) %}
+      <a class="home-recommend__item">
+        <img src="img/goods1.png">
+      </a>
+      {% endfor %}
+    </div>
+
+    {% for i in range(0,3) %}
+    <div class="category-card">
+      <div class="category-card__title">
+        <h2>TEST{{ i }}</h2>
+        <ul class="menu">
+          {% for j in range(0,6) %}
+          <li><a href="#" {% if loop.first %}class="active"{% endif %}>test{{ j }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="category-card__content">
+        <div class="category-card__left">
+        </div>
+        <div class="category-card__right">
+          {% for j in range(0,6) %}
+          <div class="category-card__right__content {% if loop.first %}active{% endif %}">
+            {% for k in range(0,10) %}
+            <a href="#" class="card">
+              <img src="http://img10.360buyimg.com/N3/jfs/t3049/94/1890472248/131923/6841598c/57d61617Nd49c568b.jpg">
+              <span class="card__title">blackberry priv{{ j }}{{ k }}</span>
+              <span class="card__price">180</span>
+            </a>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+{% endblock %}

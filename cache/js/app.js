@@ -53,3 +53,9 @@ function slide_animate(){
   var color = slides.eq(slide_current).data("color");
   $(".main").css("background", color);
 }
+
+
+function scroll_to_top(){
+  $("html,body").animate({scrollTop:0},"slow");
+  return false;
+}
