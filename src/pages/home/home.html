@@ -130,7 +130,7 @@
         {% for category in category_recommand_list %}
         <li><a href="#category-link-{{ loop.index }}">{{ category.title }}</a></li>
         {% endfor %}
-        <li><a href="javascript:scroll_to_top();">顶部<br><i class="fa fa-caret-up"></i></a></li>
+        <li><a href="javascript:scroll_to_top();" class="scroll-to-top">顶部<br><i class="fa fa-caret-up"></i></a></li>
         </ul>
 
         <!-- content -->
@@ -149,14 +149,30 @@
           </tr>
           </thead>
           <tr>
-            <td rowspan=2><img src="https://img10.360buyimg.com/cms/s193x260_jfs/t4009/178/318883821/96590/6663945/5847d8e0N4da0edfa.jpg!q90"></td>
+            <td class="cover" rowspan=2>
+              <a href="#">
+                <div class="image"><img src="https://img.alicdn.com/imgextra/i2/2228361831/TB2W97mad4opuFjSZFLXXX8mXXa_!!2228361831.jpg"></div>
+              <div class="title" style="background:{{ category.color }}">
+              <h5>美食专场</h5>
+              <p>品质美食 一件购买</p>
+              </div>
+              </a>
+            </td>
             {% for i in range(0,4) %}
-            <td><a href="#"><img src="https://img30.360buyimg.com/da/s193x130_jfs/t3322/362/2139119048/52459/5a8d56d1/5844c345Nd2e0d58d.jpg!q90"></a></td>
+            <td><a href="#">
+                <h6>时尚新品</h6>
+                <p style="color:{{ category.color }}">爆款抢先</p>
+                <img src="https://img.alicdn.com/i2/2/TB1VHsNOpXXXXaMXpXXSutbFXXX.jpg">
+              </a></td>
             {% endfor %}
           </tr>
           <tr>
             {% for i in range(0,4) %}
-            <td><a href="#"><img src="https://img30.360buyimg.com/da/s193x130_jfs/t3322/362/2139119048/52459/5a8d56d1/5844c345Nd2e0d58d.jpg!q90"></a></td>
+            <td><a href="#">
+                <h6>时尚新品</h6>
+                <p style="color:{{ category.color }}">爆款抢先</p>
+                <img src="https://img.alicdn.com/i2/2/TB1VHsNOpXXXXaMXpXXSutbFXXX.jpg">
+              </a></td>
             {% endfor %}
           </tr>
         </table>
@@ -167,12 +183,17 @@
     </div>
   </div>
 </div>
+
+<!-- include footer -->
+{% include 'components/footer/_.html' %}
+
 {% endblock %}
 {% block js %}
 <script src="https://cdn.bootcss.com/jQuery-viewport-checker/1.8.7/jquery.viewportchecker.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
 <script>
 $(function(){
+
   /** scroll event **/
   $(window).scroll(function(){
     var scroll_top = $(document).scrollTop();
@@ -183,17 +204,20 @@ $(function(){
       $(".top-bar_fixed").removeClass("top-bar_fixed_active");
     }
   });
+
+  /** show category recommand nav **/
   $(".home__category-recommand").viewportChecker({
     classToAdd: 'active',
+    //removeClassAfterAnimation: true,
     offset: '100%',
+    invertBottomOffset: false,
     repeat: true,
-    //callbackFunction:function(){
-      //$(".home__category-recommand__nav").show();
-    //}
   });
+
   /** category recommand **/
   $(".home__category-recommand__nav").onePageNav({
-    currentClass: "active"
+    currentClass: "active",
+    filter: ":not(.scroll-to-top)"
   });
 });
 </script>

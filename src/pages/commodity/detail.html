@@ -1,23 +1,35 @@
 {% extends "base.html" %}
-{% block nav %}{% endblock %}
 {% block main %}
+
+{% set cover_list = ['https://s-media-cache-ak0.pinimg.com/564x/a7/46/99/a746996ec4b22314363be3f55f192438.jpg','https://s-media-cache-ak0.pinimg.com/564x/7d/9b/a3/7d9ba3854138837bc7701ed7779e0c3e.jpg','https://s-media-cache-ak0.pinimg.com/236x/a0/47/65/a04765d7418eecf39b1c0f932b81e09b.jpg'] %}
+
 <div class="commodity">
+
+  <!-- navigation -->
+  {% include 'components/navigation/_.html' %}
+
+  <div class="commodity__header">
+    <div class="commodity__header__container">
+    {% include 'components/search-form/_.html' %}
+    </div>
+  </div>
 
   <div class="commodity__nav">
     <div class="commodity__nav__container">
+      {% include 'components/crumbs/_.html' %}
     </div>
   </div>
 
   <div class="commodity__main">
     <div class="commodity__main__cover commodity-cover">
       <ul class="commodity-cover__main">
-        <li><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/564x/a7/46/99/a746996ec4b22314363be3f55f192438.jpg"></a></li>
-        <li><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/564x/7d/9b/a3/7d9ba3854138837bc7701ed7779e0c3e.jpg"></a></li>
-        <li class="active"><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/236x/a0/47/65/a04765d7418eecf39b1c0f932b81e09b.jpg"></a></li>
+        {% for cover in cover_list %}
+        <li {% if loop.first %}class="active"{% endif %}><a href="#"><img src="{{ cover }}"></a></li>
+        {% endfor %}
       </ul>
       <ul class="commodity-cover__nav">
-        {% for item in range(0,5) %}
-        <li><a href="#"><img src="//img13.360buyimg.com/n5/s54x54_jfs/t3271/198/1628975622/101259/6ea4ec2c/57d0c513N881221b4.jpg"></a></li>
+        {% for cover in cover_list %}
+        <li><a href="#"><img src="{{ cover }}"></a></li>
         {% endfor %}
       </ul>
     </div>
@@ -88,6 +100,7 @@
             </tr>
             {% endfor %}
           </table>
+          {% include 'components/pagination/_.html' %}
           <div>
           </div>
         </div>
@@ -99,6 +112,10 @@
 
 
 </div>
+
+<!-- footer -->
+{% include 'components/footer/_.html' %}
+
 {% endblock %}
 
 {% block js %}

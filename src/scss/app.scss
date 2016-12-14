@@ -22,7 +22,27 @@
   src: url(../fonts/fzzxh-webfont.woff);
 }
 
-/** mixin **/
+/** make a circle **/
+@mixin circle ($r) {
+  display: inline-block;
+  width: $r;
+  height: $r;
+  line-height: $r;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/** make a center box **/
+@mixin container ($width) {
+  width: $width;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+/** menu **/
 @mixin menu {
   /** for ul **/
   padding-left: 0;
@@ -35,6 +55,7 @@
   }
 }
 
+/** set element clear both **/
 @mixin clear-both {
   /** add after for clear both **/
   &:after {
@@ -43,8 +64,6 @@
     clear: both;
   }
 }
-
-// Components
 
 /** global variable **/
 $w: 1200px;
@@ -62,14 +81,10 @@ a {
 }
 /** end global **/
 
-
-
-// components
+/** components **/
 @import 'src/components/navigation/_.scss';
 @include topbar;
-
-//@import 'src/components/crumbs/_.scss';
-//@import 'src/components/footer/_.scss';
+@import 'src/components/crumbs/_.scss';
 @import 'src/components/menu/_.scss';
 @import 'src/components/modal/_.scss';
 @import 'src/components/pagination/_.scss';
@@ -79,8 +94,10 @@ a {
 @import 'src/components/slide/_.scss';
 @import 'src/components/card/_.scss';
 @include commodity-card;
+@import 'src/components/footer/_.scss';
+@include footer;
 
-//@import 'src/page/home/_.scss';
+/** pages **/
 @import 'src/pages/home/home.scss';
 @include home;
 @import 'src/pages/cart/cart.scss';
@@ -89,135 +106,5 @@ a {
 @include member;
 @import 'src/pages/list/list.scss';
 @include list;
-
-.footer-ensure {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-    border-bottom: 1px solid #ddd;
-    div {
-        width: 60px;
-        margin: 0 40px;
-        text-align: center;
-        font-size: 0.85rem;
-        img {
-            width: 100%;
-        }
-        span {
-            margin-top: 5px;
-            display: block;
-            color: #333;
-        }
-    }
-}
-
-.footer-desc {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-    border-top: 1px solid #eee;
-    background: white;
-    &__content {
-        width: $w;
-        display: flex;
-        justify-content: space-around;
-    }
-    &__item {
-    }
-    h5 {
-        margin-bottom: .5rem;
-    }
-    a {
-        line-height: 20px;
-        color: #333;
-        font-size: 0.85rem;
-        &:hover {
-            color: black;
-        }
-    }
-}
-.footer-copyright {
-    padding: 20px 0;
-    text-align: center;
-    line-height: 20px;
-    font-size: 14px;
-    background: black;
-    color: #ddd;
-}
-
-
-
-
-/******************** Home Category CSS *******************/
-.category-card {
-    margin-bottom: 40px;
-    position: relative;
-    &__title {
-        position: relative;
-        border-bottom: 1px solid $primary-color;
-    }
-    h2 {
-        display: inline-block;
-        margin: 5px 0;
-        border-left: 5px solid $primary-color;
-        padding-left: 5px;
-        font-size: 1.5rem;
-    }
-    .menu {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        transform: translate(0, 1px);
-        a {
-            padding: 8px 15px;
-            border: {
-                top: 3px solid white;
-                left: 1px solid white;
-                right: 1px solid white;
-            }
-            font-size: 0.85rem;
-            color: #333;
-        }
-        .active {
-            border-color: $primary-color;
-            border-bottom: 1px solid white;
-            color: $primary-color;
-        }
-    }
-    &__content {
-        position: relative;
-        clear: both;
-    }
-    &__left {
-        position: relative;
-        float: left;
-    }
-    &__right {
-        width: 100%;
-        //float: right;
-        position: relative;
-        &__content {
-            //display: flex;
-            display: none;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .active {
-            display: flex;
-        }
-        .card {
-            width: 20%;
-            border-top: none;
-            border-left: none;
-            &:nth-child(5), &:last-child {
-                border-right: none;
-            }
-        }
-    }
-
-}
-
-
+@import 'src/pages/commodity/detail.scss';
+@include commodity;

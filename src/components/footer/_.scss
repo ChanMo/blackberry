@@ -1,0 +1,67 @@
+@mixin footer {
+  .footer {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #ccc;
+    &__container {
+      @include container($w);
+      background: white;
+      &__ensure {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        a {
+          display: block;
+          text-align: center;
+          position: relative;
+          h5 {
+            @include circle(50px);
+            margin: .5rem;
+            border: 3px solid $primary-color;
+            font-family: fzzxh;
+            font-size: 32px;
+            font-weight: 600;
+            color: $primary-color;
+          }
+          span {
+            display: inline-block;
+            transform: translateY(-30px);
+          }
+        }
+      }
+      &__navigation {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem 0;
+        dl {
+          dt {
+            margin-bottom: .5rem;
+          }
+          dd {
+            margin-left: 0;
+            font-size: 0.85rem;
+            line-height: 1.3rem;
+          }
+        }
+      }
+    }
+    &__copyright {
+      border-top: 2px solid $primary-color;
+      background: black;
+      &__container {
+        @include container($w);
+        padding: 1rem 0;
+        text-align: center;
+        p {
+          margin-bottom: .3rem;
+          font-size: 0.75rem;
+          color: #ccc;
+        }
+      }
+    }
+  }
+}
+

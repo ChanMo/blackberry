@@ -21,6 +21,7 @@ gulp.task('sass', function(){
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('cache/css')) // compile to cache css
+        .pipe(gulp.dest('docs/css'))
         .pipe(browserSync.reload({stream:true}));
 });
 
@@ -30,7 +31,7 @@ gulp.task('js', function(){
         .pipe(gulp.dest('cache/js')) //compile to cache js
         //.pipe(uglify()) // compress
         //.pipe(rename('app.min.js')) //rename
-        //.pipe(gulp.dest('docs/js'))
+        .pipe(gulp.dest('docs/js'))
         .pipe(browserSync.reload({stream:true}));
 });
 
@@ -74,7 +75,7 @@ gulp.task('clean:cache', function(){
 
 /** useref **/
 gulp.task('useref', function(){
-    return gulp.src('cache/*.html')
+    return gulp.src('src/*.html')
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
@@ -83,8 +84,6 @@ gulp.task('useref', function(){
 
 /** nunjucksRender **/
 gulp.task('nunjucksRender', function(){
-    //return gulp.src(['src/templates/*.html','src/pages/**/*.html', 'src/components/**/*.html'])
-    //return gulp.src(['src/*.html', 'src/pages/**/*.html', 'src/components/**/*.html'])
     return gulp.src('src/**/*.html')
         .pipe(nunjucksRender({
             path: 'src'
@@ -93,8 +92,11 @@ gulp.task('nunjucksRender', function(){
         .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('dist:html', function(){
-    return gulp.src('cache/**/*.html')
-        .pipe(gulp.dest('docs'))
+    return gulp.src('src/**/*.html')
+        .pipe(nunjucksRender({
+            path: 'src'
+        }))
+        .pipe(gulp.dest('docs'));
 });
 
 /** browserSync **/
@@ -116,6 +118,6 @@ gulp.task('default', ['clean:cache', 'sass', 'js', 'fonts', 'images', 'nunjucksR
 });
 
 /** build **/
-gulp.task('build', ['clean:docs', 'sass', 'js', 'nunjucksRender', 'dist:fonts', 'dist:images', 'dist:html', 'useref'], function(){
+gulp.task('build', ['clean:docs', 'sass', 'js', 'nunjucksRender', 'dist:fonts', 'dist:images', 'dist:html'], function(){
     console.log('Building files...');
 })
