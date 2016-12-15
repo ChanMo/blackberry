@@ -9,7 +9,7 @@
   ]},
   {'name':'设置','sub_menus':[
     {'name':'个人信息','link':'#'},
-    {'name':'收货地址','link':'#'}
+    {'name':'收货地址','link':'/pages/address/address.html'}
   ]}
 ] %}
 
@@ -32,6 +32,7 @@
   </div>
   <div class="member__main">
     <div class="member__main__container">
+      {% block member_all %}
       <div class="member__main__left">
         {% for menu in menu_list %}
         <dl>
@@ -45,7 +46,11 @@
       <div class="member__main__right">
         {% block member %}{% endblock %}
       </div>
+      {% endblock %}
     </div>
   </div>
 </div>
+
+<!-- footer -->
+{% include 'components/footer/_.html' %}
 {% endblock %}

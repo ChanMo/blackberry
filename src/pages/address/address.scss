@@ -1,0 +1,51 @@
+@mixin address {
+  .address {
+    &__header {
+      .button {
+        margin-bottom: 0;
+        font-size: 0.8rem;
+      }
+    }
+    table {
+      width: 100%;
+      border: 2px solid #e6e6e6;
+      th {
+        border: none;
+        color: #333;
+        font-weight: 100;
+        span {
+          display: inline-block;
+          margin-left: 1rem;
+          padding: 0 5px;
+          font-size: 0.8rem;
+          background: orange;
+          color: white;
+        }
+        i {
+          color: #999;
+          float: right;
+        }
+      }
+      td {
+        padding: 0 0.5rem;
+        line-height: 1.5rem;
+        border: none;
+        font-size: 0.8rem;
+        &:first-child {
+          white-space: nowrap;
+          width: 1%;
+          text-align: right;
+          color: #999;
+        }
+        &:last-child {
+          text-align: left;
+          color: #666;
+        }
+      }
+      .action {
+        padding: .5rem 1rem;
+        text-align: right !important;
+      }
+    }
+  }
+}

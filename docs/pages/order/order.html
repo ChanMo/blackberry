@@ -63,44 +63,236 @@
   </div>
   <div class="member__main">
     <div class="member__main__container">
-      <div class="member__main__left">
-        
-        <dl>
-          <dt>订单中心</dt>
-          
-          <dd><a href="/pages/order/orders.html">我的订单</a></dd>
-          
-          <dd><a href="#">取消订单记录</a></dd>
-          
-        </dl>
-        
-        <dl>
-          <dt>设置</dt>
-          
-          <dd><a href="#">个人信息</a></dd>
-          
-          <dd><a href="#">收货地址</a></dd>
-          
-        </dl>
-        
-      </div>
-      <div class="member__main__right">
-        
-<div class="title">
-  <h4>订单详情</h4>
-</div>
+      
 <div class="order">
-  <table>
-    <tr><td>number</td><td>00000001</td></tr>
-    <tr><td>name</td><td>chen</td></tr>
-  </table>
-  <a href="#" class="button">Pay</a>
+  <div class="order__nav">
+    <!-- crumbs nav -->
+<ul class="crumbs-nav">
+  <li><a href="/pages/home/home.html">首页</a></li>
+  <li><a href="/pages/list/list.html">商品列表</a></li>
+  <li><a href=".">商品</a></li>
+</ul>
+
+  </div>
+  <div class="order__status">
+    <div class="order__status__left">
+      <p><span>订单号：88888888</span></p>
+      <h4>完成</h4>
+      <p><a href="#">评价</a></p>
+    </div>
+    <div class="order__status__right">
+      <ul>
+        <li class="active"><a href="#"><p>提交订单</p><p>2016-12-12 12:12:12</p></a></li>
+        <li class="active"></li>
+        <li class="active"><a href="#"><p>付款成功</p></a></li>
+        <li class="active"></li>
+        <li class="active current"><a href="#"><p>商品出库</p><p>2016-12-14 12:12:12</p></a></li>
+        <li class="active"></li>
+        <li><a href="#"><p>等待收货</p><p>2016-12-16 12:12:12</p></a></li>
+        <li></li>
+        <li><a href="#"><p>完成</p><p>2016-12-16 14:12:12</p></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="order__info">
+    <table>
+      <tr>
+        <td>
+          <table>
+            <tr><th colspan=2>收货人信息</th></tr>
+            <tr><td>收货人：</td><td>陈某某</td></tr>
+            <tr><td>地址：</td><td>山东济南市历下区高新区会展中心</td></tr>
+            <tr><td>手机号码：</td><td>1555****0000</td></tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr><th colspan=2>配送信息</th></tr>
+            <tr><td>配送方式：</td><td>普通快递</td></tr>
+            <tr><td>联系电话：</td><td>1555****0000</td></tr>
+            <tr><td>运费：</td><td>¥0.00</td></tr>
+            <tr><td>送货日期：</td><td>2016-12-12</td></tr>
+            <tr><td>配送时间：</td><td>2016-12-22</td></tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr><th colspan=2>付款信息</th></tr>
+            <tr><td>付款方式：</td><td>在线支付</td></tr>
+            <tr><td>付款时间：</td><td>2016-12-12 12:12:12</td></tr>
+            <tr><td>商品总额：</td><td>¥99.00</td></tr>
+            <tr><td>应支付金额：</td><td>¥99.00</td></tr>
+            <tr><td>运费金额：</td><td>¥0.00</td></tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr><th colspan=2>发票信息</th></tr>
+            <tr><td>发票类型：</td><td>电子发票</td></tr>
+            <tr><td>发票抬头：</td><td>个人</td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="order__commodity">
+    <table>
+      <tr>
+        <th>商品</th>
+        <th>商品编号</th>
+        <th>价格</th>
+        <th>商品数量</th>
+        <th>操作</th>
+      </tr>
+      
+      <tr>
+        <td><a class="commodity-card" href="/pages/commodity/detail.html">
+  <div class="commodity-card__cover">
+    <img src="https://img10.360buyimg.com/N6/s60x60_jfs/t2803/197/3364638348/301424/bbb1806a/57888df1N88301054.jpg">
+  </div>
+  <div class="commodity-card__title">
+    <p>日本进口 ECHO厨房用品不锈钢咖啡勺长柄搅拌棒搅拌勺子咖啡匙 [交易快照]</p>
+    <p>black / 175cm</p>
+  </div>
+</a>
+</td>
+        <td>1233203</td>
+        <td>¥99.00</td>
+        <td>1</td>
+        <td><a href="#">再次购买</a></td>
+      </tr>
+      
+      <tr>
+        <td><a class="commodity-card" href="/pages/commodity/detail.html">
+  <div class="commodity-card__cover">
+    <img src="https://img10.360buyimg.com/N6/s60x60_jfs/t2803/197/3364638348/301424/bbb1806a/57888df1N88301054.jpg">
+  </div>
+  <div class="commodity-card__title">
+    <p>日本进口 ECHO厨房用品不锈钢咖啡勺长柄搅拌棒搅拌勺子咖啡匙 [交易快照]</p>
+    <p>black / 175cm</p>
+  </div>
+</a>
+</td>
+        <td>1233203</td>
+        <td>¥99.00</td>
+        <td>1</td>
+        <td><a href="#">再次购买</a></td>
+      </tr>
+      
+      <tr>
+        <td colspan=4></td>
+        <td>
+          <table class="price-info">
+            <tr><td>商品总额：</td><td>¥99.00</td></tr>
+            <tr><td>运　　费：</td><td>¥0.00</td></tr>
+            <tr><td>应付总额：</td><td>¥99.00</td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 
-      </div>
     </div>
   </div>
 </div>
+
+<!-- footer -->
+<!-- footer -->
+<div class="footer">
+  <div class="footer__container">
+    <div class="footer__container__ensure">
+      
+      <a href="#">
+        <h5>多</h5>
+        <span>品类齐全，轻松购物</span>
+      </a>
+      
+      <a href="#">
+        <h5>多</h5>
+        <span>品类齐全，轻松购物</span>
+      </a>
+      
+      <a href="#">
+        <h5>多</h5>
+        <span>品类齐全，轻松购物</span>
+      </a>
+      
+      <a href="#">
+        <h5>多</h5>
+        <span>品类齐全，轻松购物</span>
+      </a>
+      
+    </div>
+    <div class="footer__container__navigation">
+      
+      <dl>
+        <dt>新手指南</dt>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+      </dl>
+      
+      <dl>
+        <dt>新手指南</dt>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+      </dl>
+      
+      <dl>
+        <dt>新手指南</dt>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+      </dl>
+      
+      <dl>
+        <dt>新手指南</dt>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+        <dd><a href="#">常见问题</a></dd>
+        
+      </dl>
+      
+      <dl>
+        <dt>手机版</dt>
+        <dd><img src="https://img.alicdn.com/tps/i1/TB14VZKHXXXXXcAXXXX64VRZFXX-105-105.png"></dd>
+      </dl>
+    </div>
+  </div>
+  <div class="footer__copyright">
+    <div class="footer__copyright__container">
+      <p>增值电信业务经营许可证： 浙B2-20110446</p>
+      <p>互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</p>
+      <p>© 2003-2016 TMALL.COM 版权所有</p>
+    </div>
+  </div>
+</div>
+
 
 
     <!-- build:js js/app.min.js -->

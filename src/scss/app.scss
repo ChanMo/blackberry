@@ -108,3 +108,7 @@ a {
 @include list;
 @import 'src/pages/commodity/detail.scss';
 @include commodity;
+@import 'src/pages/order/order.scss';
+@include order;
+@import 'src/pages/address/address.scss';
+@include address;
