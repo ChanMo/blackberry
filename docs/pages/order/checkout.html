@@ -16,13 +16,7 @@
   <body>
 
     
-
-
-
-
-<div class="member">
-
-  <!-- navigation -->
+<div class="checkout">
   <!-- top bar -->
 <div class="top-bar">
   <div class="top-bar__container">
@@ -38,88 +32,91 @@
   </div>
 </div>
 
-
-  <!-- header -->
-  <div class="member__header">
-    <div class="member__header__container">
-      <ul>
-        
-        <li><a href="/pages/home/home.html">首页</a></li>
-        
-        <li><a href="/pages/home/home.html">账户设置</a></li>
-        
-        <li><a href="/pages/home/home.html">信息</a></li>
-        
-      </ul>
-      <!-- search form -->
-      <div class="search-form">
-  <form>
-  <input type="search">
-  <input type="submit" value="搜&nbsp;索" class="button">
-  </form>
-</div>
-
-    </div>
+  <div class="checkout__container">
+  <div class="checkout__header">
+    <h2>结算页</h2>
+    <h5>填写并核对订单信息</h5>
   </div>
-  <div class="member__main">
-    <div class="member__main__container">
-      
-      <div class="member__main__left">
+  <div class="checkout__main">
+    <div class="">
+      <h6>收货人信息<a href="#">新增收货地址</a></h6>
+      <div class="checkout__item">
+        <ul class="checkout__address">
+          
+          <li>
+            <span>家里</span>姓名 京城宣武门 155****0000
+            <div>
+            <a href="#">设为默认地址</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+            </div>
+          </li>
+          
+          <li>
+            <span>家里</span>姓名 京城宣武门 155****0000
+            <div>
+            <a href="#">设为默认地址</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+            </div>
+          </li>
+          
+          <li>
+            <span>家里</span>姓名 京城宣武门 155****0000
+            <div>
+            <a href="#">设为默认地址</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+            </div>
+          </li>
+          
+          <li>
+            <span>家里</span>姓名 京城宣武门 155****0000
+            <div>
+            <a href="#">设为默认地址</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+            </div>
+          </li>
+          
+          <li>
+            <span>家里</span>姓名 京城宣武门 155****0000
+            <div>
+            <a href="#">设为默认地址</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+            </div>
+          </li>
+          
+          <li>
+            <span>家里</span>姓名 京城宣武门 155****0000
+            <div>
+            <a href="#">设为默认地址</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+      <h6>支付方式</h6>
+      <div class="checkout__item">
         
-        <dl>
-          <dt>订单中心</dt>
-          
-          <dd><a href="/pages/order/orders.html">我的订单</a></dd>
-          
-          <dd><a href="#">取消订单记录</a></dd>
-          
-        </dl>
+        <input type="radio" name="pay_method" id="pay_货到付款"><label for="pay_货到付款">货到付款</label>
         
-        <dl>
-          <dt>设置</dt>
-          
-          <dd><a href="#">个人信息</a></dd>
-          
-          <dd><a href="/pages/address/address.html">收货地址</a></dd>
-          
-        </dl>
+        <input type="radio" name="pay_method" id="pay_微信支付"><label for="pay_微信支付">微信支付</label>
+        
+        <input type="radio" name="pay_method" id="pay_支付宝支付"><label for="pay_支付宝支付">支付宝支付</label>
+        
+        <input type="radio" name="pay_method" id="pay_银联支付"><label for="pay_银联支付">银联支付</label>
         
       </div>
-      <div class="member__main__right">
-        
-<div class="member__main__item">
-  <span>我的订单</span>
-</div>
-<div class="member__main__item order-list">
-  <ul class="order-list__nav">
-    <li class="active"><a href="#">全部订单</a></li>
-    <li><a href="#">待付款</a></li>
-    <li><a href="#">待收货</a></li>
-    <li><a href="#">待评价</a></li>
-  </ul>
-  <table class="">
-    <thead>
-      <tr>
-        <th>宝贝</th>
-        <th>单价</th>
-        <th>数量</th>
-        <th>实付款</th>
-        <th>状态</th>
-        <th>操作</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="order-list__empty"><td colspan="6"></td></tr>
-      <tr class="order-list__header">
-        <td colspan="6">
-          <span style="margin-right:1rem;">2016-12-12 12:12:00</span>
-          <span>订单号：21474579619</span>
-          <a href="#" class="float-right"><i class="fa fa-trash fa-lg"></i></a>
-        </td>
-      </tr>
-      <tr>
-        <td class="order-list__cover">
-          <a class="commodity-card" href="/pages/commodity/detail.html">
+      <h6>送货清单</h6>
+      <div class="checkout__item">
+        <table>
+          
+          <tr>
+            <td><a class="commodity-card" href="/pages/commodity/detail.html">
   <div class="commodity-card__cover">
     <img src="https://img10.360buyimg.com/N6/s60x60_jfs/t2803/197/3364638348/301424/bbb1806a/57888df1N88301054.jpg">
   </div>
@@ -128,34 +125,13 @@
     <p>black / 175cm</p>
   </div>
 </a>
-
-        </td>
-        <td><i class="fa fa-rmb"></i>&nbsp;199.00</td>
-        <td>1</td>
-        <td><i class="fa fa-rmb"></i>&nbsp;199.00</td>
-        <td>
-          <p>交易成功</p>
-          <p><a href="order.html">订单详情</a></p>
-        </td>
-        <td>
-          <a href="#" class="button">评价</a>
-          <p><a href="#">再次购买</a></p>
-        </td>
-      </tr>
-    </tbody>
-
-    <tbody>
-      <tr class="order-list__empty"><td colspan="6"></td></tr>
-      <tr class="order-list__header">
-        <td colspan="6">
-          <span style="margin-right:1rem;">2016-12-12 12:12:00</span>
-          <span>订单号：21474579619</span>
-          <a href="#" class="float-right"><i class="fa fa-trash fa-lg"></i></a>
-        </td>
-      </tr>
-      <tr>
-        <td class="order-list__cover">
-          <a class="commodity-card" href="/pages/commodity/detail.html">
+</td>
+            <td>1200</td>
+            <td>x1</td>
+          </tr>
+          
+          <tr>
+            <td><a class="commodity-card" href="/pages/commodity/detail.html">
   <div class="commodity-card__cover">
     <img src="https://img10.360buyimg.com/N6/s60x60_jfs/t2803/197/3364638348/301424/bbb1806a/57888df1N88301054.jpg">
   </div>
@@ -164,50 +140,17 @@
     <p>black / 175cm</p>
   </div>
 </a>
-
-        </td>
-        <td><i class="fa fa-rmb"></i>&nbsp;199.00</td>
-        <td>1</td>
-        <td rowspan="2"><i class="fa fa-rmb"></i>&nbsp;199.00</td>
-        <td rowspan="2">
-          <p>交易成功</p>
-          <p><a href="order.html">订单详情</a></p>
-        </td>
-        <td rowspan="2">
-          <a href="#" class="button">评价</a>
-          <p><a href="#">再次购买</a></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="order-list__cover">
-          <a class="commodity-card" href="/pages/commodity/detail.html">
-  <div class="commodity-card__cover">
-    <img src="https://img10.360buyimg.com/N6/s60x60_jfs/t2803/197/3364638348/301424/bbb1806a/57888df1N88301054.jpg">
-  </div>
-  <div class="commodity-card__title">
-    <p>日本进口 ECHO厨房用品不锈钢咖啡勺长柄搅拌棒搅拌勺子咖啡匙 [交易快照]</p>
-    <p>black / 175cm</p>
-  </div>
-</a>
-
-        </td>
-        <td><i class="fa fa-rmb"></i>&nbsp;199.00</td>
-        <td>1</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="order-list__pagination">
-  </div>
-</div>
-
+</td>
+            <td>1200</td>
+            <td>x1</td>
+          </tr>
+          
+        </table>
       </div>
-      
     </div>
   </div>
+  </div>
 </div>
-
-<!-- footer -->
 <!-- footer -->
 <div class="footer">
   <div class="footer__container">

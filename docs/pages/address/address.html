@@ -92,11 +92,11 @@
 </div>
 <div class="member__main__item address">
   <h6 class="address__header">
-    <a href="#" class="button button_hollow">新增收货地址</a>
+    <a href="#" class="button button_hollow" data-modal-open="#modal-address">新增收货地址</a>
   </h6>
   
   <table>
-    <tr><th colspan=2>某某某<span>默认地址</span><a href="#"><i class="fa fa-remove"></i></a></th></tr>
+    <tr><th colspan=2>某某某<span>默认地址</span><a href="#" data-modal-open="#modal-delete"><i class="fa fa-remove"></i></a></th></tr>
     <tr><td>收货人：</td><td>某某某</td></tr>
     <tr><td>所在地区：</td><td>山东济南市高新区</td></tr>
     <tr><td>地址：</td><td>某某小区</td></tr>
@@ -105,7 +105,7 @@
   </table>
   
   <table>
-    <tr><th colspan=2>某某某<span>默认地址</span><a href="#"><i class="fa fa-remove"></i></a></th></tr>
+    <tr><th colspan=2>某某某<span>默认地址</span><a href="#" data-modal-open="#modal-delete"><i class="fa fa-remove"></i></a></th></tr>
     <tr><td>收货人：</td><td>某某某</td></tr>
     <tr><td>所在地区：</td><td>山东济南市高新区</td></tr>
     <tr><td>地址：</td><td>某某小区</td></tr>
@@ -114,7 +114,7 @@
   </table>
   
   <table>
-    <tr><th colspan=2>某某某<span>默认地址</span><a href="#"><i class="fa fa-remove"></i></a></th></tr>
+    <tr><th colspan=2>某某某<span>默认地址</span><a href="#" data-modal-open="#modal-delete"><i class="fa fa-remove"></i></a></th></tr>
     <tr><td>收货人：</td><td>某某某</td></tr>
     <tr><td>所在地区：</td><td>山东济南市高新区</td></tr>
     <tr><td>地址：</td><td>某某小区</td></tr>
@@ -122,7 +122,57 @@
     <tr><td colspan=2 class="action"><a href="#">设为默认</a> <a href="#">编辑</a></td></tr>
   </table>
   
+
+  <div class="modal-bg"></div>
+  <!-- modal for delete -->
+  <div class="modal modal_small" id="modal-delete">
+    <h6 class="modal__header">
+      删除
+      <a href="#" data-modal-close><i class="fa fa-remove"></i></a>
+    </h6>
+    <div class="modal__container">
+      <p>您确定要删除该收货地址吗？</p>
+      <div class="text-center">
+      <button data-modal-close>确认</button>
+      <button data-modal-close>取消</button>
+      </div>
+    </div>
+  </div>
+  <!-- modal for add and eidt address -->
+  <div class="modal" id="modal-address">
+    <h6 class="modal__header">
+      添加收货地址
+      <a href="#" data-modal-close><i class="fa fa-remove"></i></a>
+    </h6>
+    <div class="modal__container">
+      <form>
+        <label>收货人：
+          <input type="text" name="name">
+        </label>
+        <label>
+          所在地区：
+          <select><option>请选择</option></select>
+        </label>
+        <label>详细地址：
+          <input type="text">
+        </label>
+        <label>手机号码：
+          <input type="tel">
+        </label>
+        <label>邮箱：
+          <input type="email">
+        </label>
+        <label>地址别名：
+          <input type="text">
+        </label>
+        <input type="submit" value="保存收货地址">
+      </form>
+    </div>
+  </div>
+  <!-- modal end -->
+
 </div>
+
 
       </div>
       
@@ -231,9 +281,10 @@
     <!-- build:js js/app.min.js -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/_slide.js"></script>
-    <script src="/js/_modal.js"></script>
     <script src="/js/app.js"></script>
     <!-- endbuild -->
     
+<script src="/js/modal/_.js"></script>
+
  </body>
 </html>

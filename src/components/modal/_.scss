@@ -5,7 +5,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: rgba(black,0.6);
+    background: rgba(black,0.2);
     z-index: 99;
     display: none;
     overflow: hidden;
@@ -18,68 +18,40 @@
     left: 50%;
     width: 80vmin;
     z-index: 99;
+    border: 5px solid rgba(black, 0.3);
+    border-radius: 5px;
     color: black;
     opacity: 0;
-    //transform: translate(-50%, 1000%);
+    visibility: hidden;
     transform: translate3d(-50%, 100%, 0);
-    display: none;
     //box-shadow: 2px 2px 5px grey;
     transition: all .5s;
-    &__main {
-        padding: 2rem 1rem;
-        box-sizing: border-box;
+    &_small{
+      width: auto;
     }
-    &__action {
-        $size: 3rem;
-        background: black;
-        color: white;
+    &__header {
+      margin: 0;
+      padding: 0 .5rem;
+      box-sizing: border-box;
+      background: #f5f5f5;
+      border-bottom: 1px solid #ccc;
+      line-height: 1.8rem;
+      font-size: 0.85rem;
+      font-weight: 100;
+      a {
+        float: right;
+        color: grey;
+      }
+    }
+    &__container{
+        padding: 2rem;
         box-sizing: border-box;
-        height: $size;
-        line-height: $size;
-        text-align: center;
-        display: flex;
-        .item {
-            width: 100%;
-            color: white;
-        }
+        font-size: 0.8rem;
     }
 }
 .modal-active {
+  visibility: visible;
     opacity: 1;
     transform: translate3d(-50%,50%,0);
 }
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    &__box {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 600px;
-        max-width: 100%;
-        padding: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        background: white;
-    }
-    &__title {
-        padding-bottom: .5rem;
-        border-bottom: 1px solid #ccc;
-    }
-    &__container {
-        padding: .5rem;
-    }
-    select {
-        margin-bottom: .5rem;
-    }
-    &__close {
-    }
-}
-
 

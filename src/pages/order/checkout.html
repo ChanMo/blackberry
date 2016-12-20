@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="checkout">
+  {% include 'components/navigation/_.html' %}
+  <div class="checkout__container">
+  <div class="checkout__header">
+    <h2>结算页</h2>
+    <h5>填写并核对订单信息</h5>
+  </div>
+  <div class="checkout__main">
+    <div class="">
+      <h6>收货人信息<a href="#">新增收货地址</a></h6>
+      <div class="checkout__item">
+        <ul class="checkout__address">
+          {% for i in range(0,6) %}
+          <li>
+            <span>家里</span>姓名 京城宣武门 155****0000
+            <div>
+            <a href="#">设为默认地址</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <h6>支付方式</h6>
+      <div class="checkout__item">
+        {% for i in ['货到付款','微信支付','支付宝支付','银联支付'] %}
+        <input type="radio" name="pay_method" id="pay_{{ i }}"><label for="pay_{{ i }}">{{ i }}</label>
+        {% endfor %}
+      </div>
+      <h6>送货清单</h6>
+      <div class="checkout__item">
+        <table>
+          {% for i in range(0,2) %}
+          <tr>
+            <td>{% include 'components/card/_.html' %}</td>
+            <td>1200</td>
+            <td>x1</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+{% include 'components/footer/_.html' %}
+{% endblock %}

@@ -112,3 +112,5 @@ a {
 @include order;
 @import 'src/pages/address/address.scss';
 @include address;
+@import 'src/pages/order/checkout.scss';
+@include checkout;

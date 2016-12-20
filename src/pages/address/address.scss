@@ -47,5 +47,27 @@
         text-align: right !important;
       }
     }
+
+    /** modal for add/edit address **/
+    .modal {
+      form {
+        label {
+          color: grey;
+          input, select {
+            margin: .4rem 0 .8rem;
+            height: 2.2rem;
+          }
+          input {
+            width: 480px;
+          }
+          select {
+            width: auto;
+          }
+          [name='name'] {
+            width: 260px;
+          }
+        }
+      }
+    }
   }
 }
