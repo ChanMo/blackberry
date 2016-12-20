@@ -34,85 +34,92 @@
 
   <div class="checkout__container">
   <div class="checkout__header">
-    <h2>结算页</h2>
-    <h5>填写并核对订单信息</h5>
+    <ul>
+      <li class="finished">1.我的购物车</li>
+      <li class="active">2.填写核对订单信息</li>
+      <li>3.成功提交订单</li>
+    </ul>
+    <h5>结算页</h5>
   </div>
-  <div class="checkout__main">
-    <div class="">
+
+  <form>
+    <p class="checkout__title">填写并核对订单信息</p>
+    <div class="checkout__main">
       <h6>收货人信息<a href="#">新增收货地址</a></h6>
       <div class="checkout__item">
-        <ul class="checkout__address">
+        <ul class="checkout__address toggle">
           
           <li>
-            <span>家里</span>姓名 京城宣武门 155****0000
-            <div>
-            <a href="#">设为默认地址</a>
-            <a href="#">编辑</a>
-            <a href="#">删除</a>
-            </div>
+            <input type="radio" name="address" id="address_0" checked>
+          <label for="address_0">家里</label>
+          <p>姓名 京城宣武门 155****0000</p>
+          <p>
+          <a href="#">设为默认地址</a>
+          <a href="#">编辑</a>
+          <a href="#">删除</a>
+          </p>
           </li>
           
           <li>
-            <span>家里</span>姓名 京城宣武门 155****0000
-            <div>
-            <a href="#">设为默认地址</a>
-            <a href="#">编辑</a>
-            <a href="#">删除</a>
-            </div>
+            <input type="radio" name="address" id="address_1" >
+          <label for="address_1">家里</label>
+          <p>姓名 京城宣武门 155****0000</p>
+          <p>
+          <a href="#">设为默认地址</a>
+          <a href="#">编辑</a>
+          <a href="#">删除</a>
+          </p>
           </li>
           
           <li>
-            <span>家里</span>姓名 京城宣武门 155****0000
-            <div>
-            <a href="#">设为默认地址</a>
-            <a href="#">编辑</a>
-            <a href="#">删除</a>
-            </div>
+            <input type="radio" name="address" id="address_2" >
+          <label for="address_2">家里</label>
+          <p>姓名 京城宣武门 155****0000</p>
+          <p>
+          <a href="#">设为默认地址</a>
+          <a href="#">编辑</a>
+          <a href="#">删除</a>
+          </p>
           </li>
           
           <li>
-            <span>家里</span>姓名 京城宣武门 155****0000
-            <div>
-            <a href="#">设为默认地址</a>
-            <a href="#">编辑</a>
-            <a href="#">删除</a>
-            </div>
-          </li>
-          
-          <li>
-            <span>家里</span>姓名 京城宣武门 155****0000
-            <div>
-            <a href="#">设为默认地址</a>
-            <a href="#">编辑</a>
-            <a href="#">删除</a>
-            </div>
-          </li>
-          
-          <li>
-            <span>家里</span>姓名 京城宣武门 155****0000
-            <div>
-            <a href="#">设为默认地址</a>
-            <a href="#">编辑</a>
-            <a href="#">删除</a>
-            </div>
+            <input type="radio" name="address" id="address_3" >
+          <label for="address_3">家里</label>
+          <p>姓名 京城宣武门 155****0000</p>
+          <p>
+          <a href="#">设为默认地址</a>
+          <a href="#">编辑</a>
+          <a href="#">删除</a>
+          </p>
           </li>
           
         </ul>
+        <a class="address__toggle" href="#">更多地址</a>
       </div>
+
+      <!-- pay method -->
       <h6>支付方式</h6>
       <div class="checkout__item">
         
-        <input type="radio" name="pay_method" id="pay_货到付款"><label for="pay_货到付款">货到付款</label>
+        <input type="radio" name="pay_method" id="pay_货到付款" checked>
+        <label for="pay_货到付款">货到付款</label>
         
-        <input type="radio" name="pay_method" id="pay_微信支付"><label for="pay_微信支付">微信支付</label>
+        <input type="radio" name="pay_method" id="pay_微信支付" >
+        <label for="pay_微信支付">微信支付</label>
         
-        <input type="radio" name="pay_method" id="pay_支付宝支付"><label for="pay_支付宝支付">支付宝支付</label>
+        <input type="radio" name="pay_method" id="pay_支付宝支付" >
+        <label for="pay_支付宝支付">支付宝支付</label>
         
-        <input type="radio" name="pay_method" id="pay_银联支付"><label for="pay_银联支付">银联支付</label>
+        <input type="radio" name="pay_method" id="pay_银联支付" >
+        <label for="pay_银联支付">银联支付</label>
         
       </div>
+      <!-- pay method end -->
+
+
+      <!-- pay checklist -->
       <h6>送货清单</h6>
-      <div class="checkout__item">
+      <div class="checkout__item checkout__commodity">
         <table>
           
           <tr>
@@ -147,9 +154,26 @@
           
         </table>
       </div>
-    </div>
+      <!-- pay checklist end -->
+
   </div>
-  </div>
+
+  <!-- checkout footer -->
+  <table class="checkout__info">
+    <tr><td>1 件商品，总商品金额：</td><td>￥4888.00</td></tr>
+    <tr><td>运费：</td><td>￥8.00</td></tr>
+    <tr><td>积分：</td><td>120</td></tr>
+    <tr><td colspan=2></td></tr>
+    <tr class="checkout__info__main"><td colspan=2></td></tr>
+    <tr class="checkout__info__main"><td>应付总额：</td><td>￥4888.00</td></tr>
+    <tr class="checkout__info__main"><td colspan=2>寄送至： 神都北门大街 收货人：某某某 155****0000</td></tr>
+    <tr class="checkout__info__main"><td colspan=2></td></tr>
+    <tr><td colspan=2></td></tr>
+    <tr><td colspan=2><input type="submit" class="button" value="提交订单"></td></tr>
+  </table>
+  <!-- checkout info end -->
+
+  </form>
 </div>
 <!-- footer -->
 <div class="footer">
@@ -254,5 +278,19 @@
     <script src="/js/app.js"></script>
     <!-- endbuild -->
     
+<script>
+$(function(){
+  $(".address__toggle").on("click", function(e){
+    e.preventDefault();
+    $(".checkout__address").toggleClass("toggle");
+    if($(".checkout__address").hasClass("toggle")){
+      $(this).html('更多地址');
+    }else{
+      $(this).html('收起地址');
+    }
+  });
+});
+</script>
+
  </body>
 </html>

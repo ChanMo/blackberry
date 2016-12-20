@@ -1,3 +1,6 @@
+@import 'src/components/footer/_.scss';
+@include footer($w);
+
 .buy-page {
     margin-top: 1rem;
 }

@@ -1,4 +1,4 @@
-@mixin footer {
+@mixin footer($w:1200px) {
   .footer {
     position: relative;
     display: block;

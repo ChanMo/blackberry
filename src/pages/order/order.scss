@@ -1,6 +1,9 @@
 @mixin order {
   $color: #71b247;
   .order {
+    @import 'src/components/footer/_.scss';
+    @include footer($w);
+
     background: #f5f5f5;
     &__nav {
     }
